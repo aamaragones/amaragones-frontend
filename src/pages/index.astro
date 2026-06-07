@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Works from "../components/Works.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Alquimista de lo imposible";
+const description =
+  "Sitio oficial de Antonio Ángel Martínez Aragonés — autor de Similis.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <Hero />
+
+  <About />
+
+  <Works />
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,112 @@
+---
+const {
+    title = "Alquimista de lo imposible",
+    description = "Sitio oficial del autor Antonio Ángel Martínez Aragonés",
+} = Astro.props;
+import "../styles/global.css";
+import favNeg from "../assets/favicon_fringe+.png";
+import favPos from "../assets/favicon_fringe-.png";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <link
+            id="favicon"
+            rel="icon"
+            href={favNeg.src}
+            data-light={favPos.src}
+            data-dark={favNeg.src}
+        />
+        <script>
+            (function () {
+                try {
+                    var KEY = "theme-mode";
+                    var saved = localStorage.getItem(KEY);
+                    var prefersLight =
+                        window.matchMedia &&
+                        window.matchMedia("(prefers-color-scheme: light)")
+                            .matches;
+                    var isLight = saved === "light" || (!saved && prefersLight);
+                    if (isLight)
+                        document.documentElement.classList.add("light-mode");
+                    var link = document.getElementById(
+                        "favicon",
+                    ) as HTMLLinkElement | null;
+                    if (link) {
+                        var light = link.dataset && link.dataset.light;
+                        var dark = link.dataset && link.dataset.dark;
+                        link.href = isLight
+                            ? light || link.href
+                            : dark || link.href;
+                    }
+                } catch (e) {
+                    /* fall back silently */
+                }
+            })();
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Global styles are imported in the component frontmatter so Astro can bundle them -->
+    </head>
+    <body>
+        <slot name="header" />
+        <main>
+            <slot />
+        </main>
+        <slot name="footer" />
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var KEY = "theme-mode";
+                var btn = document.getElementById("theme-toggle");
+                if (!btn) return;
+                function updateAria(isLight: boolean) {
+                    btn!.setAttribute("aria-pressed", String(!!isLight));
+                    btn!.setAttribute(
+                        "aria-label",
+                        isLight
+                            ? "Cambiar a modo oscuro"
+                            : "Cambiar a modo claro",
+                    );
+                }
+                function updateFavicon(isLight: boolean) {
+                    try {
+                        var link = document.getElementById(
+                            "favicon",
+                        ) as HTMLLinkElement | null;
+                        if (!link) return;
+                        var LIGHT = link.dataset && link.dataset.light;
+                        var DARK = link.dataset && link.dataset.dark;
+                        link.href = isLight
+                            ? LIGHT || link.href
+                            : DARK || link.href;
+                    } catch (e) {}
+                }
+                var initialIsLight =
+                    document.documentElement.classList.contains("light-mode");
+                updateAria(initialIsLight);
+                updateFavicon(initialIsLight);
+                btn!.addEventListener("click", function () {
+                    var isLight =
+                        document.documentElement.classList.toggle("light-mode");
+                    try {
+                        localStorage.setItem(KEY, isLight ? "light" : "dark");
+                    } catch (e) {}
+                    updateAria(isLight);
+                    updateFavicon(isLight);
+                });
+            });
+        </script>
+    </body>
+</html>

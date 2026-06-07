@@ -1,15 +1,32 @@
-# Amaragones Frontend — Repository for Product & SDD
+# Amaragones Frontend (Astro)
 
-This repository contains product definitions, system design (SDD), specifications, and agent/skill scaffolding used with GitHub Copilot and VS Code. It's intentionally lightweight and organized to make collaboration and automation easy.
+Static site for the author Antonio Ángel Martínez Aragonés. Built with Astro (JS), with React integration available for progressive enhancement.
 
-Structure (top-level):
+Quick start
 
-- `product/` — product brief, vision, personas, roadmap
-- `sdd/` — system design documentation, boundaries, architecture
-- `specs/` — functional and non-functional specifications
-- `agents/` — agent definitions and flows (*.agent.md)
-- `skills/` — skill instructions and SKILL.md templates
-- `rules/` — governance and rules artifacts
-- `docs/` — supporting docs, styleguide, onboarding
+```bash
+npm install
+npm run dev
+```
 
-See the subfolder READMEs for templates and examples.
+Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Project structure
+
+- `src/pages/` — site pages
+- `src/assets` — site assets
+- `src/layouts/` — base layout
+- `src/components/` — components (header, hero, about, works, ButtonFantasy)
+- `src/styles/` — global CSS and variables
+- `public/` — static assets (images)
+
+Notes for follow-up agents
+
+- Fonts are loaded via Google Fonts in `src/layouts/BaseLayout.astro`.
+- The `ButtonFantasy` is implemented as a React component in `src/components/ButtonFantasy.jsx`; it is rendered server-side by default and can be hydrated with Astro client directives when interactivity is required.
+- Styling is plain CSS in `src/styles/global.css` and variables in `src/styles/vars.css`.

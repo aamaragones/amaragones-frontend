@@ -1,0 +1,52 @@
+:root {
+    /* Máximo ancho para el contenido central (no-hero) */
+    --content-max-width: 1600px;
+    --fondo-oscuro: #0B0F14;
+    --fondo-claro: #0F1A24;
+    --color-principal-1: #2C5A7A;
+    --color-principal-2: #2E6F5B;
+    --acento-oro: #C6A15B;
+    --acento-bronce: #8A6A3D;
+    --texto-claro: #E8E1D1;
+    --texto-oscuro: #B7B2A6;
+}
+
+/* Light theme palette (contrapartes claras) */
+:root {
+    --fondo-pergamino: #F4EFE4;
+    --fondo-papel-antiguo: #EAE1D3;
+    --fondo-marmol-calido: #DDD2BF;
+
+    /* Color Principal */
+    --principal-azul-arcano: #4E6E8A;
+    --principal-verde-alquimico: #56796B;
+
+    /* Acentos Nobles */
+    --acento-oro-viejo: #B68A3D;
+    --acento-bronce-historico: #8A6742;
+    --acento-oro-iluminado: #D5B06A;
+
+    /* Textos */
+    --texto-tinta-principal: #2A241D;
+    --texto-tinta-secundaria: #5A5147;
+    --texto-apagado: #84796A;
+
+    /* Contrastes */
+    --contraste-borgona-imperial: #7B3E3E;
+    --contraste-azul-profundo: #4E6E8A;
+
+    /* Gradiente Atmósfera */
+    --gradiente-atmosfera: linear-gradient(to right, var(--fondo-pergamino), var(--fondo-papel-antiguo), var(--principal-azul-arcano));
+}
+
+/* Cuando se active el modo claro, reasignamos los tokens usados por el sitio */
+html.light-mode {
+    --fondo-oscuro: var(--fondo-pergamino);
+    --fondo-claro: var(--fondo-papel-antiguo);
+    --color-principal-1: var(--principal-azul-arcano);
+    --color-principal-2: var(--principal-verde-alquimico);
+    --acento-oro: var(--acento-oro-iluminado);
+    --acento-bronce: var(--acento-bronce-historico);
+    --texto-claro: var(--texto-tinta-principal);
+    --texto-oscuro: var(--texto-tinta-secundaria);
+}
