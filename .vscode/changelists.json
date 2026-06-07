@@ -3,7 +3,7 @@
     {
       "name": "Default",
       "files": [
-        "astro.config.mjs"
+        "docs/.nojelly"
       ]
     }
   ],
