@@ -3,5 +3,6 @@ import react from '@astrojs/react';
 
 export default defineConfig({
     integrations: [react()],
-    site: 'http://localhost:3000'
+    site: 'http://localhost:3000',
+    outDir: './docs'
 });
