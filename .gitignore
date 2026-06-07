@@ -1,3 +1,4 @@
 site/node_modules/
 site/.next/
 node_modules
+.vscode/changelists.json
