@@ -3,15 +3,7 @@
     {
       "name": "Default",
       "files": [
-        "astro.config.mjs",
-        ".vscode/changelists.json",
-        "docs/_astro/client.ksqssqMa.js",
-        "docs/_astro/favicon_fringe-.CYub-5FN.png",
-        "docs/_astro/favicon_fringe_.BOthI_Zo.png",
-        "docs/_astro/hero.DpuETlGU.png",
-        "docs/_astro/index.Dcrp2w6F.css",
-        "docs/_astro/shape-.CuoZPARC.png",
-        "docs/index.html"
+        "astro.config.mjs"
       ]
     }
   ],

@@ -3,6 +3,7 @@ import react from '@astrojs/react';
 
 export default defineConfig({
     integrations: [react()],
-    site: 'http://localhost:3000',
+    site: 'https://aamaragones.github.io',
+    base: '/amaragones-frontend/',
     outDir: './docs'
 });
