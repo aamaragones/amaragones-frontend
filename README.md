@@ -1,6 +1,6 @@
 # Amaragones Frontend (Astro)
 
-Static site for the author Antonio Ángel Martínez Aragonés. Built with Astro (JS), with React integration available for progressive enhancement.
+Static site for the author A. M. Aragonés. Built with Astro (JS), with React integration available for progressive enhancement.
 
 Quick start
 
