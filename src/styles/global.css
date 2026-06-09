@@ -177,7 +177,7 @@ nav ul li a:hover {
 .about-image {
     flex: 1;
     height: 450px;
-    background: url('../assets/shape-.png') center;
+    background: url('../assets/logo/shape-.png') center;
     background-repeat: no-repeat;
     background-size: contain;
 }
