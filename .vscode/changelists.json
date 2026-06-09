@@ -3,7 +3,7 @@
     {
       "name": "Default",
       "files": [
-        "docs/.nojelly"
+        "docs/.nojekyll"
       ]
     }
   ],
