@@ -1,5 +1,6 @@
 ---
-
+import shapeNeg from "../assets/logo/shape-.png";
+import shapePos from "../assets/logo/shape+.png";
 ---
 
 <section id="about" class="about" role="region" aria-label="Sobre el autor">
@@ -26,16 +27,8 @@
       </p>
     </div>
     <div class="about-image-wrapper" aria-hidden="true">
-      <img
-        src="/src/assets/logo/shape-.png"
-        alt=""
-        class="about-image about-image-dark"
-      />
-      <img
-        src="/src/assets/logo/shape+.png"
-        alt=""
-        class="about-image about-image-light"
-      />
+      <img src={shapeNeg.src} alt="" class="about-image about-image-dark" />
+      <img src={shapePos.src} alt="" class="about-image about-image-light" />
     </div>
   </div>
 </section>

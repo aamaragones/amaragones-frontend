@@ -3,15 +3,15 @@
     {
       "name": "Default",
       "files": [
-        "src/components/Hero.astro",
         ".vscode/changelists.json",
-        ".astro/types.d.ts",
-        "src/styles/global.css",
-        ".astro/settings.json",
-        "src/styles/vars.css",
-        "src/scripts/works-stack.js",
+        "src/components/About.astro",
+        "docs/.nojekyll",
+        "docs/index.html",
+        "docs/_astro/shape-.CuoZPARC.png",
+        "docs/_astro/shape_.FEyBuiqk.png",
         "src/components/Works.astro",
-        "src/components/About.astro"
+        "src/styles/global.css",
+        "docs/_astro/works-stack.B8FX86JR.js"
       ]
     }
   ],
