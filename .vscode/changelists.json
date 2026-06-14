@@ -3,7 +3,15 @@
     {
       "name": "Default",
       "files": [
-        "docs/.nojekyll"
+        "src/components/Hero.astro",
+        ".vscode/changelists.json",
+        ".astro/types.d.ts",
+        "src/styles/global.css",
+        ".astro/settings.json",
+        "src/styles/vars.css",
+        "src/scripts/works-stack.js",
+        "src/components/Works.astro",
+        "src/components/About.astro"
       ]
     }
   ],
