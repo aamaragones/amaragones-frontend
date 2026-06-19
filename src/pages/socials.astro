@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SocialsList from "../components/social/Socials.astro";
+---
+
+<BaseLayout
+    title="Mis redes sociales"
+    description="Conecta conmigo en mis redes sociales"
+>
+    <Header slot="header" />
+
+    <div class="socials-page">
+        <section class="socials-hero">
+            <h1 class="font-titulo">Mis Redes Sociales</h1>
+            <p class="overtitle">Únete a mí en las redes</p>
+        </section>
+
+        <section class="socials-content">
+            <div class="container">
+                <div class="section-header">
+                    <span>Sígueme</span>
+                </div>
+                <SocialsList />
+            </div>
+        </section>
+    </div>
+
+    <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+    .socials-page {
+        width: 100%;
+    }
+
+    .socials-hero {
+        text-align: center;
+        padding: 6rem 2rem 3rem;
+        background: radial-gradient(
+            circle at center,
+            rgba(44, 90, 122, 0.1) 0%,
+            rgba(15, 26, 36, 1) 90%
+        );
+        border-bottom: 1px solid rgba(138, 106, 61, 0.2);
+    }
+
+    .socials-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.05em;
+        color: var(--hero-titulo);
+    }
+
+    .socials-hero .overtitle {
+        color: var(--acento-oro);
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .socials-content {
+        padding: 4rem 0;
+    }
+
+    .socials-content .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        color: var(--acento-oro);
+        margin-bottom: 3rem;
+        font-family: "Cinzel", serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+    }
+
+    .section-header::before,
+    .section-header::after {
+        content: "";
+        height: 1px;
+        width: 80px;
+        background-color: var(--acento-bronce);
+    }
+
+    @media (max-width: 768px) {
+        .socials-hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .socials-content {
+            padding: 2rem 0;
+        }
+
+        .section-header::before,
+        .section-header::after {
+            width: 40px;
+        }
+    }
+</style>

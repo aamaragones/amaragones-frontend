@@ -1,0 +1,57 @@
+---
+interface Props {
+    iconSrc: string; // Ruta al SVG o PNG del icono de la red social (Tiktok, X, etc.)
+    altText: string;
+}
+
+const { iconSrc, altText } = Astro.props;
+import socialShield from "../../assets/socials/social_shield.png";
+---
+
+<div class="shield-container">
+    <img src={socialShield.src} alt="" class="shield-bg" aria-hidden="true" />
+
+    <img src={iconSrc} alt={altText} class="social-icon" />
+</div>
+
+<style>
+    .shield-container {
+        position: relative;
+        width: 64px; /* Ajusta según el tamaño que quieras para el escudo */
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .shield-bg {
+        position: absolute;
+        top: -33px;
+        left: 0;
+        width: 100%;
+        height: 128px;
+        object-fit: cover;
+        pointer-events: none;
+        overflow: visible;
+    }
+
+    .social-icon {
+        position: relative;
+        z-index: 2;
+        width: 70%; /* Se adapta al espacio interno limpio del escudo */
+        height: 70%;
+        object-fit: contain;
+        /* Si tus iconos son vectores oscuros, puedes usar este filtro para forzar el color pergamino */
+        filter: sepia(0.3) contrast(1.1);
+    }
+
+    @media (max-width: 768px) {
+        .shield-bg {
+            left: 20px;
+        }
+        .social-icon {
+            left: 20px;
+        }
+    }
+</style>

@@ -1,0 +1,32 @@
+[
+    {
+        "platform": "TikTok",
+        "handle": "@aamaragones",
+        "url": "https://tiktok.com/@aamaragones",
+        "iconSrc": "/assets/socials/tiktok.png"
+    },
+    {
+        "platform": "YouTube",
+        "handle": "@aamaragones",
+        "url": "https://youtube.com/@aamaragones",
+        "iconSrc": "/assets/socials/youtube.png"
+    },
+    {
+        "platform": "Instagram",
+        "handle": "@aamaragones",
+        "url": "https://instagram.com/aamaragones",
+        "iconSrc": "/assets/socials/instagram.png"
+    },
+    {
+        "platform": "X",
+        "handle": "@aamaragones",
+        "url": "https://x.com/aamaragones",
+        "iconSrc": "/assets/socials/x.png"
+    },
+    {
+        "platform": "Bluesky",
+        "handle": "@aamaragones.bsky.social",
+        "url": "https://bsky.app/profile/aamaragones.bsky.social",
+        "iconSrc": "/assets/socials/bluesky.png"
+    }
+]

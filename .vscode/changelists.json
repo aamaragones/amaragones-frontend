@@ -3,15 +3,25 @@
     {
       "name": "Default",
       "files": [
-        ".vscode/changelists.json",
-        "src/components/About.astro",
         "docs/.nojekyll",
         "docs/index.html",
-        "docs/_astro/shape-.CuoZPARC.png",
-        "docs/_astro/shape_.FEyBuiqk.png",
-        "src/components/Works.astro",
-        "src/styles/global.css",
-        "docs/_astro/works-stack.B8FX86JR.js"
+        "docs/_astro/index.CJOuK1Tj.css",
+        ".vscode/changelists.json",
+        "src/assets/socials/social_shield.png",
+        "src/components/social/SocialCard.astro",
+        "src/components/social/ShieldIcon.astro",
+        "src/components/social/Socials.astro",
+        "src/data/socials.json",
+        "src/pages/socials.astro",
+        "src/components/Header.astro",
+        "docs/_astro/Footer.vcBwqBhT.css",
+        "docs/socials/index.html",
+        ".astro/types.d.ts",
+        "src/assets/socials/bluesky.webp",
+        "src/assets/socials/youtube.png",
+        "src/assets/socials/tiktok.png",
+        "src/assets/socials/instagram.png",
+        "src/assets/socials/x.png"
       ]
     }
   ],
