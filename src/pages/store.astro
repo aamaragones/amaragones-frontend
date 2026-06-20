@@ -5,6 +5,7 @@ import Footer from "../components/home/Footer.astro";
 import StoreHero from "../components/store/StoreHero.astro";
 import StoreSection from "../components/store/Store.astro";
 import StoreElement from "../components/store/StoreElement.astro";
+import worksStack from "../scripts/works-stack.js?url";
 ---
 
 <BaseLayout
@@ -19,7 +20,7 @@ import StoreElement from "../components/store/StoreElement.astro";
         description="Explora nuestro catálogo de libros y merchandising"
     />
 
-    <StoreSection title="Libros">
+    <StoreSection title="Libros" ariaLabel="Libros disponibles">
         <StoreElement
             title="Similis: Pluma y Espada"
             subtitle="Tomo I"
@@ -42,7 +43,7 @@ import StoreElement from "../components/store/StoreElement.astro";
         />
     </StoreSection>
 
-    <StoreSection title="Merchandising">
+    <StoreSection title="Merchandising" ariaLabel="Merchandising disponible">
         <StoreElement
             title="Camiseta Pluma y Espada"
             subtitle="Edición Limitada"
@@ -54,6 +55,11 @@ import StoreElement from "../components/store/StoreElement.astro";
             backgroundGradient="linear-gradient(135deg, rgba(50, 70, 50, 0.8) 0%, rgba(70, 50, 70, 0.8) 100%)"
         />
         <StoreElement
+            title="Taza Alquimista"
+            subtitle="Cerámica Artesanal"
+            backgroundGradient="linear-gradient(135deg, rgba(80, 60, 40, 0.8) 0%, rgba(40, 70, 60, 0.8) 100%)"
+        />
+        <StoreElement
             title="Marcapáginas"
             subtitle="Set de 3"
             backgroundGradient="linear-gradient(135deg, rgba(60, 50, 80, 0.8) 0%, rgba(50, 80, 60, 0.8) 100%)"
@@ -62,3 +68,5 @@ import StoreElement from "../components/store/StoreElement.astro";
 
     <Footer slot="footer" />
 </BaseLayout>
+
+<script type="module" src={worksStack}></script>

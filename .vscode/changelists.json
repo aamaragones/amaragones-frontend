@@ -3,17 +3,12 @@
     {
       "name": "Default",
       "files": [
-        ".astro/types.d.ts",
-        "src/components/home/Footer.astro",
+        "src/scripts/works-stack.js",
         ".vscode/changelists.json",
-        "src/styles/global.css",
-        "src/components/home/ThemeToggle.astro",
-        "src/components/home/Header.astro",
-        "src/layouts/BaseLayout.astro",
-        "src/components/socials/Socials.astro",
-        "src/pages/socials.astro",
-        "src/components/home/ButtonFantasy.jsx",
-        "src/pages/store.astro"
+        "src/pages/store.astro",
+        "src/components/store/Store.astro",
+        "src/components/store/StoreElement.astro",
+        "src/styles/global.css"
       ]
     }
   ],

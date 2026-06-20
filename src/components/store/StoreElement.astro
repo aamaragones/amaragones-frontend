@@ -22,18 +22,8 @@ const {
 
 <style>
     .card {
-        background-color: var(--fondo-claro);
-        border: 1px solid rgba(138, 106, 61, 0.4);
-        padding: 8rem 2.5rem;
-        min-width: 250px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s;
         background-size: cover;
         background-position: center;
-        position: relative;
         overflow: hidden;
     }
 
@@ -55,11 +45,6 @@ const {
     .card > :global(*) {
         position: relative;
         z-index: 1;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        border-color: var(--acento-oro);
     }
 
     .card h3 {
