@@ -3,8 +3,8 @@
     {
       "name": "Default",
       "files": [
-        "astro.config.mjs",
-        ".vscode/changelists.json"
+        ".vscode/changelists.json",
+        ".public/CNAME"
       ]
     }
   ],
