@@ -1,0 +1,44 @@
+---
+import shapeNeg from "../../assets/logo/shape-.png";
+import shapePos from "../../assets/logo/shape+.png";
+---
+
+<section id="about" class="about" role="region" aria-label="Sobre el autor">
+    <div class="container">
+        <div class="about-content">
+            <div class="section-header font-titulo">Sobre el Autor</div>
+            <p>
+                A. M. Aragonés nació en La Carlota, un pequeño pueblo al
+                suroeste de Córdoba.
+            </p>
+            <p>
+                Estudió Bioquímica en la Universidad de Málaga y, tras completar
+                un máster en laboratorio avanzado, descubrió su pasión por la
+                Ciencia de Datos, el Machine Learning y la Inteligencia
+                Artificial. Esto lo llevó a especializarse en ese ámbito
+                mediante un segundo máster, y desde entonces ha trabajado como
+                ingeniero de IA.
+            </p>
+            <p>
+                Su pasión por la escritura nació durante su etapa universitaria.
+                Aunque Similis es su primera novela, anteriormente ya había
+                explorado la narrativa y la poesía a través de relatos de menor
+                extensión y diversos poemas, compaginando esta vocación
+                literaria con una trayectoria investigadora reflejada en
+                publicaciones científicas de diverso impacto.
+            </p>
+        </div>
+        <div class="about-image-wrapper" aria-hidden="true">
+            <span
+                class="about-image about-image-dark"
+                aria-hidden="true"
+                style={`-webkit-mask-image: url('${shapeNeg.src}'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; -webkit-mask-mode: luminance; mask-image: url('${shapeNeg.src}'); mask-size: contain; mask-repeat: no-repeat; mask-position: center; mask-mode: luminance; background-color: var(--acento-oro);`}
+            ></span>
+            <span
+                class="about-image about-image-light"
+                aria-hidden="true"
+                style={`-webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><filter id='f'><feColorMatrix type='luminanceToAlpha'/><feComponentTransfer><feFuncA type='table' tableValues='1 0'/></feComponentTransfer></filter></defs><image href='${shapePos.src}' width='100%' height='100%' preserveAspectRatio='xMidYMid meet' filter='url(%23f)'/></svg>"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><filter id='f'><feColorMatrix type='luminanceToAlpha'/><feComponentTransfer><feFuncA type='table' tableValues='1 0'/></feComponentTransfer></filter></defs><image href='${shapePos.src}' width='100%' height='100%' preserveAspectRatio='xMidYMid meet' filter='url(%23f)'/></svg>"); mask-size: contain; mask-repeat: no-repeat; mask-position: center; background-color: var(--acento-oro);`}
+            ></span>
+        </div>
+    </div>
+</section>

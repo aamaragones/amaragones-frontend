@@ -216,6 +216,8 @@ html.light-mode .about-image.about-image-dark {
     display: none;
 }
 
+/* Masks applied inline in About.astro using imported assets */
+
 /* Use the author image as background of the about-content on wide screens
    and hide the separate .about-image element. Also switch the image in
    light mode to shape+.png */
@@ -599,3 +601,5 @@ html.light-mode .theme-toggle .icon-moon {
         display: none;
     }
 }
+
+/* Removed unused .logo-shape helpers — masks are applied where needed */
