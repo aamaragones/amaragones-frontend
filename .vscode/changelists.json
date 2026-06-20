@@ -3,7 +3,7 @@
     {
       "name": "Default",
       "files": [
-        ".github/workflows/deploy.yml",
+        "astro.config.mjs",
         ".vscode/changelists.json"
       ]
     }

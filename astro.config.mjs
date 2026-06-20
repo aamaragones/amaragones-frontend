@@ -4,6 +4,5 @@ import react from '@astrojs/react';
 export default defineConfig({
     integrations: [react()],
     site: 'https://aamaragones.github.io',
-    base: '/amaragones-frontend/',
-    outDir: './docs'
+    base: '/amaragones-frontend/'
 });
