@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StoreHero from "../components/StoreHero.astro";
+import Store from "../components/Store.astro";
+import StoreElement from "../components/StoreElement.astro";
+---
+
+<BaseLayout title="Tienda" description="Tienda de A. M. Aragonés">
+    <Header slot="header" />
+
+    <StoreHero title="Tienda" overtitle="A. M. Aragonés" description="Explora nuestro catálogo de merchandising y libros" />
+
+    <Store title="Merchandising">
+        <StoreElement 
+            title="Camiseta Pluma y Espada" 
+            subtitle="Edición Limitada"
+            backgroundGradient="linear-gradient(135deg, rgba(70, 50, 30, 0.8) 0%, rgba(40, 60, 80, 0.8) 100%)"
+        />
+        <StoreElement 
+            title="Sudadera Saga Similis" 
+            subtitle="Comodidad Premium"
+            backgroundGradient="linear-gradient(135deg, rgba(50, 70, 50, 0.8) 0%, rgba(70, 50, 70, 0.8) 100%)"
+        />
+        <StoreElement 
+            title="Taza Alquimista" 
+            subtitle="Cerámica Artesanal"
+            backgroundGradient="linear-gradient(135deg, rgba(80, 60, 40, 0.8) 0%, rgba(40, 70, 60, 0.8) 100%)"
+        />
+        <StoreElement 
+            title="Marcapáginas" 
+            subtitle="Set de 3"
+            backgroundGradient="linear-gradient(135deg, rgba(60, 50, 80, 0.8) 0%, rgba(50, 80, 60, 0.8) 100%)"
+        />
+    </Store>
+
+    <Store title="Libros">
+        <StoreElement 
+            title="Similis: Pluma y Espada" 
+            subtitle="Tomo I"
+            backgroundGradient="linear-gradient(135deg, rgba(100, 70, 40, 0.8) 0%, rgba(50, 80, 100, 0.8) 100%)"
+        />
+        <StoreElement 
+            title="Similis: Reino de Alas" 
+            subtitle="Tomo II"
+            backgroundGradient="linear-gradient(135deg, rgba(70, 100, 60, 0.8) 0%, rgba(100, 60, 80, 0.8) 100%)"
+        />
+        <StoreElement 
+            title="Similis: La Era Oscura" 
+            subtitle="Tomo III"
+            backgroundGradient="linear-gradient(135deg, rgba(80, 60, 100, 0.8) 0%, rgba(60, 100, 80, 0.8) 100%)"
+        />
+        <StoreElement 
+            title="Similis: El Último Refugio" 
+            subtitle="Tomo IV"
+            backgroundGradient="linear-gradient(135deg, rgba(100, 80, 50, 0.8) 0%, rgba(50, 100, 80, 0.8) 100%)"
+        />
+    </Store>
+
+    <Footer slot="footer" />
+</BaseLayout>

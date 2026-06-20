@@ -1,26 +1,14 @@
 ---
 import SocialCard from "./SocialCard.astro";
+import SvgIcon from "./SvgIcon.astro";
 import socialsData from "../../data/socials.json";
-import tiktokIcon from "../../assets/socials/tiktok.png";
-import youtubeIcon from "../../assets/socials/youtube.png";
-import instagramIcon from "../../assets/socials/instagram.png";
-import xIcon from "../../assets/socials/x.png";
-import blueskyIcon from "../../assets/socials/bluesky.webp";
 
 interface Social {
     platform: string;
     handle: string;
     url: string;
-    iconSrc: string;
+    svgPath: string;
 }
-
-const iconMap: Record<string, { src: string }> = {
-    TikTok: tiktokIcon,
-    YouTube: youtubeIcon,
-    Instagram: instagramIcon,
-    X: xIcon,
-    Bluesky: blueskyIcon,
-};
 
 const socials: Social[] = socialsData;
 ---
@@ -32,7 +20,7 @@ const socials: Social[] = socialsData;
                 platform={social.platform}
                 handle={social.handle}
                 url={social.url}
-                iconSrc={iconMap[social.platform].src}
+                svgPath={social.svgPath}
             />
         ))
     }

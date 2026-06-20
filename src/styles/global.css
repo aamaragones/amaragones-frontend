@@ -420,8 +420,10 @@ html.light-mode .about-image.about-image-dark {
 
 .theme-toggle .icon {
     line-height: 1;
-    font-size: 1.4rem;
     display: inline-block;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
 }
 
 /* Por defecto mostramos la luna; en modo claro mostramos el sol */
@@ -460,6 +462,13 @@ html.light-mode .theme-toggle .icon-moon {
 
 /* Mobile-only stacked card UI (<=768px) */
 @media (max-width: 768px) {
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
     .cards-container {
         display: none;
     }
@@ -553,5 +562,40 @@ html.light-mode .theme-toggle .icon-moon {
         .card-stack .card {
             transition: none !important;
         }
+    }
+}
+
+/* Logo visibility control */
+/* Hide logo on mobile, show on desktop */
+.header-logo {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .header-logo {
+        display: block;
+    }
+}
+
+/* Theme toggle visibility control */
+/* Hide header toggle on mobile, show on desktop */
+.header-theme-toggle {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .header-theme-toggle {
+        display: inline-flex;
+    }
+}
+
+/* Show footer toggle on mobile, hide on desktop */
+.footer-theme-toggle {
+    display: inline-flex;
+}
+
+@media (min-width: 769px) {
+    .footer-theme-toggle {
+        display: none;
     }
 }

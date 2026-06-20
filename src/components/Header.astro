@@ -1,19 +1,20 @@
 ---
-
+import moonIcon from "../assets/logo/moon.png";
+import sunIcon from "../assets/logo/sun.png";
 ---
 
 <header>
   <div class="container">
-    <div class="logo font-titulo">✥</div>
+    <div class="logo font-titulo header-logo">✥</div>
     <nav aria-label="Main navigation">
       <ul class="font-ui">
         <li><a href="/amaragones-frontend/">Inicio</a></li>
-        <li><a href="#works">Obras</a></li>
+        <li><a href="/amaragones-frontend/#works">Obras</a></li>
         <li><a href="/amaragones-frontend/socials">Mis redes</a></li>
-        <li><a href="#">Tienda</a></li>
+        <li><a href="/amaragones-frontend/store">Tienda</a></li>
       </ul>
     </nav>
-    <div>
+    <div class="header-theme-toggle">
       <button
         id="theme-toggle"
         class="theme-toggle"
@@ -21,8 +22,18 @@
         aria-pressed="false"
         title="Cambiar tema"
       >
-        <span class="icon icon-moon" aria-hidden="true">🌙</span>
-        <span class="icon icon-sun" aria-hidden="true">☀️</span>
+        <img
+          src={moonIcon.src}
+          alt=""
+          class="icon icon-moon"
+          aria-hidden="true"
+        />
+        <img
+          src={sunIcon.src}
+          alt=""
+          class="icon icon-sun"
+          aria-hidden="true"
+        />
       </button>
     </div>
   </div>

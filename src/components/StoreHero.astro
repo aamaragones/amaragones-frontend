@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  overtitle?: string;
+  description?: string;
+}
+
+const { title, overtitle = "Próximamente", description } = Astro.props;
+---
+
+<section class="hero" role="region" aria-label={title}>
+  {overtitle && <div class="overtitle font-ui">{overtitle}</div>}
+  <h1 class="font-titulo">{title}</h1>
+  {description && <p style="font-weight: 800; color: rgb(255, 249, 198);">{description}</p>}
+</section>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 1rem;
+    }
+  }
+</style>

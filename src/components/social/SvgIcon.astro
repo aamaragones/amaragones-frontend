@@ -1,0 +1,30 @@
+---
+interface Props {
+    svgPath: string;
+    ariaLabel?: string;
+}
+
+const { svgPath, ariaLabel } = Astro.props;
+---
+
+<svg
+    viewBox="0 0 16 16"
+    width="24"
+    height="24"
+    fill="currentColor"
+    aria-label={ariaLabel}
+>
+    <path d={svgPath}></path>
+</svg>
+
+<style>
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: transform 0.2s ease;
+    }
+
+    svg:hover {
+        transform: scale(1.1);
+    }
+</style>

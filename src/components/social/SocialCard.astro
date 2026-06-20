@@ -5,15 +5,15 @@ interface Props {
     platform: string; // Ej: "TikTok"
     handle: string; // Ej: "@autor_fantasia"
     url: string; // Ej: "https://tiktok.com/..."
-    iconSrc: string; // Ruta al icono para el escudo
+    svgPath: string; // SVG path para el icono
 }
 
-const { platform, handle, url, iconSrc } = Astro.props;
+const { platform, handle, url, svgPath } = Astro.props;
 ---
 
 <a href={url} target="_blank" rel="noopener noreferrer" class="social-box">
     <div class="shield-wrapper">
-        <ShieldIcon iconSrc={iconSrc} altText={`Icono de ${platform}`} />
+        <ShieldIcon svgPath={svgPath} altText={`Icono de ${platform}`} />
     </div>
 
     <div class="box-content">
@@ -27,7 +27,6 @@ const { platform, handle, url, iconSrc } = Astro.props;
     :root {
         --color-bg-tinta: #0b0f14;
         --color-bg-noche: #0f1424;
-        --color-oro-viejo: #c6a15b;
         --color-ambar-hechizo: #e3a857;
         --color-pergamino: #e8e1d1;
         --color-gris-ceniza: #b7b2a6;
@@ -38,54 +37,42 @@ const { platform, handle, url, iconSrc } = Astro.props;
         display: flex;
         align-items: center;
 
-        /* Degradado sutil entre tus dos fondos oscuros */
-        background: linear-gradient(
-            135deg,
-            var(--color-bg-tinta),
-            var(--color-bg-noche)
-        );
-        border: 1px solid var(--color-oro-viejo);
-        border-left: 0; /* La parte izquierda está "abierta" para el escudo */
+        background: linear-gradient(135deg, transparent, var(--color-bg-noche));
+        border: 1px solid var(--acento-oro-viejo);
+        border-left: 0;
 
-        /* El padding izquierdo es amplio (80px) para dejarle la "cama" al escudo */
         padding: 18px 24px 18px 80px;
-        margin-left: 32px; /* Margen externo para que el escudo que sobresale no se corte con el layout */
+        margin-left: 32px;
 
         text-decoration: none;
-        border-radius: 0px; /* Esquinas completamente rectas para mantener la estética medieval */
+        border-radius: 0px;
         transition:
             transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
             border-color 0.3s ease,
             box-shadow 0.3s ease;
     }
 
-    /* --- Posicionamiento Clave del Escudo --- */
     .shield-wrapper {
         position: absolute;
-        left: -32px; /* Saca exactamente la mitad del escudo (64px / 2) fuera de la caja */
+        left: -32px;
         top: 50%;
-        transform: translateY(
-            -50%
-        ); /* Lo centra verticalmente a la perfección */
+        transform: translateY(-50%);
         transition: transform 0.3s ease;
     }
 
-    /* --- Efectos de Interacción (Feedback Mágico) --- */
     .social-box:hover {
         border-color: var(--color-ambar-hechizo);
-        /* Un resplandor ámbar muy sutil que simula magia/encantamiento */
-        box-shadow: 0 0 15px rgba(223, 168, 87, 0.15);
-        transform: translateX(
-            6px
-        ); /* La caja se desplaza ligeramente a la derecha */
+        transform: translateX(6px);
     }
 
     .social-box:hover .shield-wrapper {
-        /* El escudo reacciona expandiéndose un poco al hacer hover en la caja */
         transform: translateY(-50%) scale(1.08);
     }
 
-    /* --- Estilos de Texto --- */
+    html.light-mode .social-box {
+        background: none;
+    }
+
     .box-content {
         display: flex;
         flex-direction: column;
@@ -93,15 +80,19 @@ const { platform, handle, url, iconSrc } = Astro.props;
     }
 
     .platform-title {
-        font-family: "Trajan Pro", serif; /* Tu fuente de títulos */
+        font-family: "Trajan Pro", serif;
         color: var(--color-pergamino);
         font-size: 1.15rem;
         letter-spacing: 1px;
         text-transform: uppercase;
     }
 
+    html.light-mode .platform-title {
+        color: var(--acento-oro);
+    }
+
     .platform-handle {
-        font-family: "Montserrat", sans-serif; /* Tu fuente de interfaz */
+        font-family: "Montserrat", sans-serif;
         color: var(--color-gris-ceniza);
         font-size: 0.85rem;
         letter-spacing: 0.5px;
