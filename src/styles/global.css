@@ -196,27 +196,22 @@ html.light-mode .hero {
     width: 100%;
     object-fit: contain;
     display: block;
+    /* Mask properties */
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-mode: luminance;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-mode: luminance;
+    /* Background colors for dark and light modes */
+    background-color: white;
 }
 
-/* Show only the appropriate variant globally: dark by default, light in light-mode
-    Use combined-class selectors for higher specificity so media-query rules don't override */
-.about-image.about-image-light {
-    display: none;
+html.light-mode .about-image {
+    background-color: black;
 }
-
-.about-image.about-image-dark {
-    display: block;
-}
-
-html.light-mode .about-image.about-image-light {
-    display: block;
-}
-
-html.light-mode .about-image.about-image-dark {
-    display: none;
-}
-
-/* Masks applied inline in About.astro using imported assets */
 
 /* Use the author image as background of the about-content on wide screens
    and hide the separate .about-image element. Also switch the image in
@@ -602,4 +597,10 @@ html.light-mode .theme-toggle .icon-moon {
     }
 }
 
-/* Removed unused .logo-shape helpers — masks are applied where needed */
+.store-hero {
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 1) 90%), url('../assets/hero/store_hero.png') top/cover;
+}
+
+.socials-hero {
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 1) 90%), url('../assets/hero/socials_hero.png') top/cover;
+}

@@ -1,6 +1,5 @@
 ---
 import shapeNeg from "../../assets/logo/shape-.png";
-import shapePos from "../../assets/logo/shape+.png";
 ---
 
 <section id="about" class="about" role="region" aria-label="Sobre el autor">
@@ -30,15 +29,16 @@ import shapePos from "../../assets/logo/shape+.png";
         </div>
         <div class="about-image-wrapper" aria-hidden="true">
             <span
-                class="about-image about-image-dark"
+                class="about-image"
                 aria-hidden="true"
-                style={`-webkit-mask-image: url('${shapeNeg.src}'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; -webkit-mask-mode: luminance; mask-image: url('${shapeNeg.src}'); mask-size: contain; mask-repeat: no-repeat; mask-position: center; mask-mode: luminance; background-color: var(--acento-oro);`}
-            ></span>
-            <span
-                class="about-image about-image-light"
-                aria-hidden="true"
-                style={`-webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><filter id='f'><feColorMatrix type='luminanceToAlpha'/><feComponentTransfer><feFuncA type='table' tableValues='1 0'/></feComponentTransfer></filter></defs><image href='${shapePos.src}' width='100%' height='100%' preserveAspectRatio='xMidYMid meet' filter='url(%23f)'/></svg>"); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><filter id='f'><feColorMatrix type='luminanceToAlpha'/><feComponentTransfer><feFuncA type='table' tableValues='1 0'/></feComponentTransfer></filter></defs><image href='${shapePos.src}' width='100%' height='100%' preserveAspectRatio='xMidYMid meet' filter='url(%23f)'/></svg>"); mask-size: contain; mask-repeat: no-repeat; mask-position: center; background-color: var(--acento-oro);`}
-            ></span>
+                style={`--mask-image: url('${shapeNeg.src}');`}></span>
         </div>
     </div>
 </section>
+
+<style>
+    .about-image {
+        -webkit-mask-image: var(--mask-image);
+        mask-image: var(--mask-image);
+    }
+</style>

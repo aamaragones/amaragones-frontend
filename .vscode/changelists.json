@@ -3,9 +3,11 @@
     {
       "name": "Default",
       "files": [
-        "astro.config.mjs",
-        "src/components/Header.astro",
-        ".vscode/changelists.json"
+        "src/components/home/About.astro",
+        ".vscode/changelists.json",
+        "src/styles/global.css",
+        "src/components/socials/SocialHero.astro",
+        "src/components/store/StoreHero.astro"
       ]
     }
   ],
