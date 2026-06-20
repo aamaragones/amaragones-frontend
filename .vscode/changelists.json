@@ -3,23 +3,8 @@
     {
       "name": "Default",
       "files": [
-        "src/components/Header.astro",
-        ".astro/types.d.ts",
-        ".vscode/changelists.json",
-        "src/data/socials.json",
-        "src/components/social/SvgIcon.astro",
-        "src/components/social/Socials.astro",
-        "src/components/social/ShieldIcon.astro",
-        "src/components/social/SocialCard.astro",
-        "src/components/Footer.astro",
-        "src/styles/global.css",
-        "src/components/Works.astro",
-        "src/pages/store.astro",
-        "src/assets/logo/moon.png",
-        "src/assets/logo/sun.png",
-        "src/components/StoreHero.astro",
-        "src/components/StoreElement.astro",
-        "src/components/Store.astro"
+        ".github/workflows/deploy.yml",
+        ".vscode/changelists.json"
       ]
     }
   ],
