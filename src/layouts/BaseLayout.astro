@@ -69,17 +69,24 @@ import favPos from "../assets/logo/favicon_fringe-.png";
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 var KEY = "theme-mode";
-                var btn = document.getElementById("theme-toggle");
-                if (!btn) return;
+                var btnHeader = document.getElementById("theme-toggle-header");
+                var btnMobile = document.getElementById("theme-toggle-mobile");
+                var buttons = [btnHeader, btnMobile].filter(Boolean);
+
+                if (!buttons.length) return;
+
                 function updateAria(isLight: boolean) {
-                    btn!.setAttribute("aria-pressed", String(!!isLight));
-                    btn!.setAttribute(
-                        "aria-label",
-                        isLight
-                            ? "Cambiar a modo oscuro"
-                            : "Cambiar a modo claro",
-                    );
+                    buttons.forEach((btn) => {
+                        btn.setAttribute("aria-pressed", String(!!isLight));
+                        btn.setAttribute(
+                            "aria-label",
+                            isLight
+                                ? "Cambiar a modo oscuro"
+                                : "Cambiar a modo claro",
+                        );
+                    });
                 }
+
                 function updateFavicon(isLight: boolean) {
                     try {
                         var link = document.getElementById(
@@ -93,18 +100,27 @@ import favPos from "../assets/logo/favicon_fringe-.png";
                             : DARK || link.href;
                     } catch (e) {}
                 }
+
                 var initialIsLight =
                     document.documentElement.classList.contains("light-mode");
                 updateAria(initialIsLight);
                 updateFavicon(initialIsLight);
-                btn!.addEventListener("click", function () {
-                    var isLight =
-                        document.documentElement.classList.toggle("light-mode");
-                    try {
-                        localStorage.setItem(KEY, isLight ? "light" : "dark");
-                    } catch (e) {}
-                    updateAria(isLight);
-                    updateFavicon(isLight);
+
+                buttons.forEach((btn) => {
+                    btn.addEventListener("click", function () {
+                        var isLight =
+                            document.documentElement.classList.toggle(
+                                "light-mode",
+                            );
+                        try {
+                            localStorage.setItem(
+                                KEY,
+                                isLight ? "light" : "dark",
+                            );
+                        } catch (e) {}
+                        updateAria(isLight);
+                        updateFavicon(isLight);
+                    });
                 });
             });
         </script>

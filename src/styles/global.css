@@ -1,6 +1,10 @@
 @import "./vars.css";
 
 /* Reset */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -48,7 +52,8 @@ a:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: .75rem;
     letter-spacing: .1em;
-    text-transform: uppercase
+    text-transform: uppercase;
+    align-items: center;
 }
 
 .texto-secundario {
@@ -237,7 +242,7 @@ html.light-mode .about-image {
     .about-image {
         position: relative;
         width: 100%;
-        height: auto;
+        height: 600px;
         opacity: 0.25;
         display: block;
         pointer-events: none;
@@ -331,9 +336,10 @@ html.light-mode .about-image {
 .footer-tags {
     padding: 3rem 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     border-top: 1px solid rgba(138, 106, 61, 0.2);
     flex-wrap: wrap
 }
@@ -418,8 +424,8 @@ html.light-mode .about-image {
 .theme-toggle .icon {
     line-height: 1;
     display: inline-block;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -568,9 +574,19 @@ html.light-mode .theme-toggle .icon-moon {
     display: none;
 }
 
+.mobile-theme-toggle {
+    display: none !important;
+}
+
 @media (min-width: 769px) {
     .header-logo {
         display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-theme-toggle {
+        display: inline-flex !important;
     }
 }
 
@@ -603,4 +619,27 @@ html.light-mode .theme-toggle .icon-moon {
 
 .socials-hero {
     background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 1) 90%), url('../assets/hero/socials_hero.png') top/cover;
+}
+
+.footer-tags .contact-email {
+    text-transform: lowercase;
+}
+
+.footer-tags .copyright {
+    color: var(--texto-claro);
+    font-size: .6rem;
+}
+
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--fondo-oscuro);
+    padding: 1.5rem 0;
 }

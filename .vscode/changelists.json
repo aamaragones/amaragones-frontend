@@ -3,11 +3,17 @@
     {
       "name": "Default",
       "files": [
-        "src/components/home/About.astro",
+        ".astro/types.d.ts",
+        "src/components/home/Footer.astro",
         ".vscode/changelists.json",
         "src/styles/global.css",
-        "src/components/socials/SocialHero.astro",
-        "src/components/store/StoreHero.astro"
+        "src/components/home/ThemeToggle.astro",
+        "src/components/home/Header.astro",
+        "src/layouts/BaseLayout.astro",
+        "src/components/socials/Socials.astro",
+        "src/pages/socials.astro",
+        "src/components/home/ButtonFantasy.jsx",
+        "src/pages/store.astro"
       ]
     }
   ],

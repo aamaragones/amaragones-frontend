@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ButtonFantasy({ label = 'Descubre Similis ✧', href = 'https://img.wattpad.com/cover/127525774-256-k499814.jpg', target = '_blank' }) {
+export default function ButtonFantasy({ label = 'Descubre Similis ✧', href = '/store', target = '_self' }) {
     return (
         <a className="btn-fantasy" href={href} target={target} rel="noopener noreferrer">
             <svg className="btn-frame" viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden>
