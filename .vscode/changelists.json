@@ -3,7 +3,16 @@
     {
       "name": "Default",
       "files": [
-        "src/assets/hero/store_hero.png"
+        "src/components/socials/SocialCard.astro",
+        ".vscode/changelists.json",
+        "package-lock.json",
+        "package.json",
+        "src/components/home/WorksCarousel.astro",
+        "src/pages/index.astro",
+        "src/styles/carousel.css",
+        "src/styles/global.css",
+        "src/components/home/Works.astro",
+        "src/components/home/Percentage.astro"
       ]
     }
   ],

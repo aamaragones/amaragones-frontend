@@ -1,4 +1,5 @@
 @import "./vars.css";
+@import "./carousel.css";
 
 /* Reset */
 html {
@@ -262,11 +263,15 @@ html.light-mode .about-image {
     }
 }
 
-
-
 .works {
     padding: 2rem 10% 5rem;
     text-align: center
+}
+
+@media (max-width: 1444px) {
+    .works-no-carousel {
+        display: none;
+    }
 }
 
 .works-header {
@@ -330,7 +335,7 @@ html.light-mode .about-image {
 }
 
 .card-subtitle {
-    color: var(--acento-bronce);
+    color: var(--texto-claro);
     margin-top: auto
 }
 

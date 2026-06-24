@@ -1,0 +1,163 @@
+---
+import Percentage from "./Percentage.astro";
+---
+
+<section
+    id="works-carousel"
+    class="works works-carousel-section"
+    role="region"
+    aria-label="Obras destacadas"
+>
+    <div class="container">
+        <div class="works-header font-titulo">Saga Similis</div>
+
+        <div class="swiper works-carousel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card pluma-y-espada">
+                        <h3
+                            class="font-titulo"
+                            data-swiper-parallax="-50"
+                            data-swiper-parallax-opacity="0.6"
+                        >
+                            Similis<br />Pluma y Espada
+                        </h3>
+                        <div
+                            class="card-subtitle font-ui"
+                            data-swiper-parallax="-50"
+                            data-swiper-parallax-opacity="0.4"
+                        >
+                            <span class="roman-badge">I</span>
+                        </div>
+                        <Percentage percentage={85} />
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h3
+                            class="font-titulo"
+                            data-swiper-parallax="-50"
+                            data-swiper-parallax-opacity="0.6"
+                        >
+                            Similis<br />Reino de Alas
+                        </h3>
+                        <div
+                            class="card-subtitle font-ui"
+                            data-swiper-parallax="-50"
+                            data-swiper-parallax-opacity="0.4"
+                        >
+                            <span class="roman-badge">II</span>
+                        </div>
+                        <Percentage percentage={15} />
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h3
+                            class="font-titulo"
+                            data-swiper-parallax="-50"
+                            data-swiper-parallax-opacity="0.6"
+                        >
+                            Similis<br />La Era Oscura
+                        </h3>
+                        <div
+                            class="card-subtitle font-ui"
+                            data-swiper-parallax="-50"
+                            data-swiper-parallax-opacity="0.4"
+                        >
+                            <span class="roman-badge">III</span>
+                        </div>
+                        <Percentage label="Próximamente" />
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h3 class="font-titulo">
+                            Similis<br />El Último Refugio
+                        </h3>
+                        <div class="card-subtitle font-ui">
+                            <span class="roman-badge">IV</span>
+                        </div>
+                        <Percentage label="Próximamente" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import Swiper from "swiper";
+    import {
+        Navigation,
+        FreeMode,
+        Parallax,
+        EffectCoverflow,
+    } from "swiper/modules";
+
+    new Swiper(".works-carousel", {
+        modules: [Navigation, FreeMode, Parallax, EffectCoverflow],
+        effect: "coverflow",
+        coverflowEffect: {
+            rotate: 30,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        centeredSlides: true,
+        grabCursor: true,
+        parallax: false,
+        loop: false,
+        freeMode: {
+            enabled: false,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                slidesPerGroup: 1,
+            },
+            350: {
+                slidesPerView: 1.3,
+                spaceBetween: -110,
+                slidesPerGroup: 1,
+            },
+            450: {
+                slidesPerView: 1.8,
+                spaceBetween: -40,
+                slidesPerGroup: 1,
+            },
+            600: {
+                slidesPerView: 1.9,
+                spaceBetween: 20,
+                slidesPerGroup: 1,
+            },
+            769: {
+                slidesPerView: 2.3,
+                spaceBetween: 30,
+                slidesPerGroup: 1,
+            },
+            890: {
+                slidesPerView: 2.8,
+                spaceBetween: 30,
+                slidesPerGroup: 1,
+            },
+            1024: {
+                slidesPerView: 3.2,
+                spaceBetween: 30,
+                slidesPerGroup: 1,
+            },
+            1200: {
+                slidesPerView: 3.7,
+                spaceBetween: 30,
+                slidesPerGroup: 1,
+            },
+        },
+    });
+</script>
