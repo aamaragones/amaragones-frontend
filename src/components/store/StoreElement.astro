@@ -3,19 +3,22 @@ interface Props {
     title: string;
     subtitle?: string;
     backgroundGradient?: string;
+    image?: string;
 }
 
 const {
     title,
     subtitle,
     backgroundGradient = "linear-gradient(135deg, rgba(44, 90, 122, 0.8) 0%, rgba(45, 90, 61, 0.8) 100%)",
+    image,
 } = Astro.props;
+
+const backgroundStyle = image
+    ? `background: ${backgroundGradient}, url(${image}) center/cover;`
+    : `background: ${backgroundGradient}, radial-gradient(circle at center, rgba(198, 161, 91, 0.1) 0%, rgba(15, 26, 36, 1) 100%);`;
 ---
 
-<div
-    class="card"
-    style={`background: ${backgroundGradient}, radial-gradient(circle at center, rgba(198, 161, 91, 0.1) 0%, rgba(15, 26, 36, 1) 100%);`}
->
+<div class="card" style={backgroundStyle}>
     <h3 class="font-titulo">{title}</h3>
     {subtitle && <div class="card-subtitle font-ui">{subtitle}</div>}
 </div>

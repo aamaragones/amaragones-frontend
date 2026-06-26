@@ -2,16 +2,17 @@
 interface Props {
     title: string;
     ariaLabel?: string;
+    noStack?: boolean;
 }
 
-const { title, ariaLabel } = Astro.props;
+const { title, ariaLabel, noStack = false } = Astro.props;
 ---
 
 <section class="works" role="region">
     <div class="container">
         <div class="works-header font-titulo">{title}</div>
         <div
-            class="cards-container"
+            class={`cards-container${noStack ? " no-stack" : ""}`}
             role="region"
             aria-label={ariaLabel ?? title}
         >

@@ -3,16 +3,22 @@
     {
       "name": "Default",
       "files": [
-        "src/components/socials/SocialCard.astro",
+        "src/components/home/ThemeToggle.astro",
+        ".astro/settings.json",
+        ".astro/types.d.ts",
         ".vscode/changelists.json",
-        "package-lock.json",
-        "package.json",
-        "src/components/home/WorksCarousel.astro",
-        "src/pages/index.astro",
         "src/styles/carousel.css",
-        "src/styles/global.css",
+        "src/components/home/Percentage.astro",
         "src/components/home/Works.astro",
-        "src/components/home/Percentage.astro"
+        "src/pages/index.astro",
+        "src/styles/global.css",
+        "src/components/socials/ShieldIcon.astro",
+        "src/components/socials/SocialCard.astro",
+        "src/components/home/Header.astro",
+        "src/pages/store.astro",
+        "src/components/store/Store.astro",
+        "src/components/home/WorksCarousel.astro",
+        "src/components/store/StoreElement.astro"
       ]
     }
   ],

@@ -2,9 +2,10 @@
 interface Props {
     percentage?: number;
     label?: string;
+    labelColor?: string;
 }
 
-const { percentage, label = "Completado" } = Astro.props;
+const { percentage, label = "Completado", labelColor } = Astro.props;
 
 const hasBar = percentage !== undefined;
 const clamped = hasBar ? Math.min(100, Math.max(0, percentage!)) : 0;
@@ -15,7 +16,12 @@ const clamped = hasBar ? Math.min(100, Math.max(0, percentage!)) : 0;
         hasBar ? (
             <>
                 <div class="percentage-meta">
-                    <span class="percentage-label">{label}</span>
+                    <span
+                        class="percentage-label"
+                        style={labelColor ? `color: ${labelColor}` : undefined}
+                    >
+                        {label}
+                    </span>
                     <span class="percentage-value">{clamped}%</span>
                 </div>
                 <div class="percentage-track">
@@ -23,7 +29,12 @@ const clamped = hasBar ? Math.min(100, Math.max(0, percentage!)) : 0;
                 </div>
             </>
         ) : (
-            <div class="percentage-coming-soon">{label}</div>
+            <div
+                class="percentage-coming-soon"
+                style={labelColor ? `color: ${labelColor}` : undefined}
+            >
+                {label}
+            </div>
         )
     }
 </div>
@@ -79,7 +90,7 @@ const clamped = hasBar ? Math.min(100, Math.max(0, percentage!)) : 0;
         text-transform: uppercase;
         color: var(--texto-oscuro);
         text-align: center;
-        padding: 0.3rem 0;
+        padding: 0.3rem 0 0 0;
         border-top: 1px solid rgba(138, 106, 61, 0.25);
         font-style: italic;
     }

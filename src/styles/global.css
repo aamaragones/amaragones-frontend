@@ -415,24 +415,23 @@ html.light-mode .about-image {
 .theme-toggle {
     background: transparent;
     border: none;
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     color: var(--acento-oro);
-    padding: 0.45rem;
+    padding: 0.5rem;
     border-radius: 50px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
     transition: background .2s, color .2s, box-shadow .2s;
 }
 
 .theme-toggle .icon {
-    line-height: 1;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 /* Por defecto mostramos la luna; en modo claro mostramos el sol */
@@ -461,11 +460,6 @@ html.light-mode .theme-toggle .icon-moon {
 }
 
 .pluma-y-espada {
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.3) 0%, rgba(15, 26, 36, 1) 90%), url('https://img.wattpad.com/cover/127525774-256-k499814.jpg') center/cover;
-}
-
-.pluma-y-espada:hover {
-    transition: all .3s;
     background: radial-gradient(circle at center, rgba(44, 90, 122, 0.3) 0%, rgba(15, 26, 36, 0.3) 70%), url('https://img.wattpad.com/cover/127525774-256-k499814.jpg') center/cover;
 }
 
@@ -478,7 +472,7 @@ html.light-mode .theme-toggle .icon-moon {
         justify-content: center;
     }
 
-    .cards-container {
+    .cards-container:not(.no-stack) {
         display: none;
     }
 
@@ -648,4 +642,8 @@ header {
     z-index: 1000;
     background-color: var(--fondo-oscuro);
     padding: 1.5rem 0;
+}
+
+.header-list {
+    letter-spacing: 0.02em;
 }

@@ -79,10 +79,6 @@
 
 /* Reduce card padding on small screens */
 @media (max-width: 480px) {
-    .swiper-slide .card {
-        padding: 5rem 1.5rem;
-    }
-
     .swiper-slide .card h3 {
         font-size: 1.2rem;
     }
