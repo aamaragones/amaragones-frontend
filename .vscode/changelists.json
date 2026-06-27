@@ -3,10 +3,9 @@
     {
       "name": "Default",
       "files": [
-        "src/styles/global.css",
-        ".vscode/changelists.json",
-        "src/pages/store.astro",
-        "src/styles/carousel.css"
+        "src/styles/carousel.css",
+        "src/components/home/WorksCarousel.astro",
+        ".vscode/changelists.json"
       ]
     }
   ],

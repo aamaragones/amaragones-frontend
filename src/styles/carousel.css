@@ -20,6 +20,11 @@
     overflow: hidden;
 }
 
+/* Fix: override Swiper's computed slide width so coverflow pivot aligns with the card */
+.works-carousel .swiper-slide {
+    width: 260px;
+}
+
 /* Cards inside slides */
 .swiper-slide .card {
     background-color: var(--fondo-claro);
@@ -31,6 +36,7 @@
     transition: transform 0.3s;
     position: relative;
     height: 390px;
+    width: 260px;
     min-width: unset;
 }
 
