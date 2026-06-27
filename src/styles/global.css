@@ -569,8 +569,8 @@ html.light-mode .theme-toggle .icon-moon {
     background: radial-gradient(circle at center, rgba(44, 90, 122, 0.3) 0%, rgba(15, 26, 36, 0.3) 70%), url('https://img.wattpad.com/cover/127525774-256-k499814.jpg') center/cover;
 }
 
-/* Mobile-only stacked card UI (<=768px) */
-@media (max-width: 768px) {
+/* Mobile-only stacked card UI (<=900px) */
+@media (max-width: 900px) {
 
     nav {
         width: 100%;

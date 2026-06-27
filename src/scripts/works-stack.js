@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         // media change handling
-        const mql = window.matchMedia("(max-width: 768px)");
+        const mql = window.matchMedia("(max-width: 900px)");
 
         const handleMQ = (ev) => {
             if (ev.matches) {

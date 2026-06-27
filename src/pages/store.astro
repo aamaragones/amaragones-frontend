@@ -11,8 +11,9 @@ import camisetaBlanca from "../assets/merchandising/camiseta_blanca.png";
 import sudaderaNegra from "../assets/merchandising/sudadera_negra_bolsillo.png";
 import sudaderaNegraSin from "../assets/merchandising/sudadera_negra.png";
 import sudaderaBlanca from "../assets/merchandising/sudadera_blanca.png";
-import separadores from "../assets/merchandising/separadores.png";
+import separadores from "../assets/merchandising/marcapaginas.png";
 import pocketNeg from "../assets/logo/pocket-.png";
+import tazasAlquimia from "../assets/merchandising/tazas_alquimia.png";
 ---
 
 <BaseLayout
@@ -123,8 +124,16 @@ import pocketNeg from "../assets/logo/pocket-.png";
             backgroundGradient="linear-gradient(135deg, rgba(60, 50, 80, 0.0) 0%, rgba(50, 80, 60, 0.0) 100%)"
             image={separadores.src}
         />
-        <div class="merch-proximamente font-ui">Próximamente</div>
+        <StoreElement
+            title="Tazas Alquimia"
+            subtitle="Set de 3"
+            textColor="#5A5147"
+            backgroundGradient="linear-gradient(135deg, rgba(60, 50, 80, 0.0) 0%, rgba(50, 80, 60, 0.0) 100%)"
+            image={tazasAlquimia.src}
+        />
     </StoreSection>
+
+    <div class="merch-proximamente font-ui">Próximamente</div>
 
     <Footer slot="footer" />
 </BaseLayout>
@@ -422,5 +431,6 @@ import pocketNeg from "../assets/logo/pocket-.png";
         border-top: 1px solid rgba(138, 106, 61, 0.25);
         font-style: italic;
         width: 200px;
+        margin-bottom: 3rem;
     }
 </style>
