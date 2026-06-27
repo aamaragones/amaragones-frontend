@@ -46,6 +46,10 @@ const ogImageURL = new URL(image, Astro.site);
             data-light={favPos.src}
             data-dark={favNeg.src}
         />
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="75219c3e-fc98-4bbc-91db-9d316c107058"></script>
         <script>
             (function () {
                 try {
@@ -96,7 +100,9 @@ const ogImageURL = new URL(image, Astro.site);
                 var KEY = "theme-mode";
                 var btnHeader = document.getElementById("theme-toggle-header");
                 var btnMobile = document.getElementById("theme-toggle-mobile");
-                var buttons = [btnHeader, btnMobile].filter(Boolean);
+                var buttons = [btnHeader, btnMobile].filter(
+                    (b): b is HTMLElement => b !== null,
+                );
 
                 if (!buttons.length) return;
 

@@ -3,19 +3,11 @@
     {
       "name": "Default",
       "files": [
-        "astro.config.mjs",
+        "src/styles/global.css",
         ".vscode/changelists.json",
-        "package-lock.json",
-        "package.json",
-        "public/CNAME",
-        "public/robots.txt",
-        "src/layouts/BaseLayout.astro",
-        "src/pages/index.astro",
-        "src/pages/socials.astro",
         "src/pages/store.astro",
-        ".astro/types.d.ts",
-        ".public/CNAME",
-        "public/Hero-Preview.png"
+        "src/pages/socials.astro",
+        "src/layouts/BaseLayout.astro"
       ]
     }
   ],

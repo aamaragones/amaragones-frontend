@@ -4,6 +4,7 @@ import Header from "../components/home/Header.astro";
 import Footer from "../components/home/Footer.astro";
 import SocialsList from "../components/socials/Socials.astro";
 import SocialHero from "../components/socials/SocialHero.astro";
+import baseNeg from "../assets/logo/base-.png";
 ---
 
 <BaseLayout
@@ -21,7 +22,14 @@ import SocialHero from "../components/socials/SocialHero.astro";
                 <div class="section-header">
                     <span>Sígueme</span>
                 </div>
-                <SocialsList />
+                <div class="socials-row">
+                    <SocialsList />
+                    <span
+                        class="pocket-aside"
+                        aria-hidden="true"
+                        style={`--mask-image: url('${baseNeg.src}'); position: absolute`}
+                    ></span>
+                </div>
             </div>
         </section>
     </div>
@@ -32,6 +40,47 @@ import SocialHero from "../components/socials/SocialHero.astro";
 <style>
     .socials-page {
         width: 100%;
+    }
+
+    .socials-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 4rem;
+        width: 100%;
+        position: relative;
+        padding-bottom: 4rem;
+    }
+
+    .pocket-aside {
+        display: none;
+        flex-shrink: 0;
+        width: 260px;
+        height: 374px;
+        pointer-events: none;
+        -webkit-mask-image: var(--mask-image);
+        mask-image: var(--mask-image);
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: bottom center;
+        mask-position: bottom center;
+        -webkit-mask-mode: luminance;
+        mask-mode: luminance;
+        background-color: white;
+        bottom: 0;
+        right: 4rem;
+    }
+
+    :global(html.light-mode) .pocket-aside {
+        background-color: black;
+    }
+
+    @media (min-width: 1100px) {
+        .pocket-aside {
+            display: block;
+        }
     }
 
     .socials-hero {
@@ -62,7 +111,7 @@ import SocialHero from "../components/socials/SocialHero.astro";
     }
 
     .socials-content {
-        padding: 4rem 0;
+        padding: 4rem 0 0;
     }
 
     .socials-content .container {
@@ -97,7 +146,7 @@ import SocialHero from "../components/socials/SocialHero.astro";
         }
 
         .socials-content {
-            padding: 2rem 0;
+            padding: 2rem 0 0;
         }
 
         .socials-hero {
