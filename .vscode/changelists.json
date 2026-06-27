@@ -3,7 +3,12 @@
     {
       "name": "Default",
       "files": [
-        "src/components/store/StoreElement.astro"
+        "src/pages/index.astro",
+        ".vscode/changelists.json",
+        "src/pages/socials.astro",
+        "public/llms.txt",
+        "public/robots.txt",
+        "src/pages/store.astro"
       ]
     }
   ],

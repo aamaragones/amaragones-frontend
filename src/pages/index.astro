@@ -28,27 +28,227 @@ const jsonLdPerson = JSON.stringify({
   name: "A. M. Aragonés",
   alternateName: "Antonio Ángel Martínez Aragonés",
   url: "https://www.amaragones.com",
-  sameAs: ["https://instagram.com/aamaragones"],
-  jobTitle: "Escritor",
+  sameAs: [
+    "https://instagram.com/aamaragones",
+    "https://tiktok.com/@aamaragones",
+    "https://youtube.com/@aamaragones",
+    "https://x.com/aamaragones",
+    "https://bsky.app/profile/aamaragones.bsky.social",
+  ],
+  jobTitle: ["Escritor", "Ingeniero de Inteligencia Artificial"],
+  knowsAbout: [
+    "Fantasía oscura",
+    "Literatura española",
+    "Machine Learning",
+    "Inteligencia Artificial",
+    "Bioquímica",
+    "Ciencia de Datos",
+  ],
+  birthPlace: {
+    "@type": "Place",
+    name: "La Carlota",
+    addressLocality: "La Carlota",
+    addressRegion: "Córdoba",
+    addressCountry: "ES",
+  },
+  nationality: {
+    "@type": "Country",
+    name: "España",
+  },
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Universidad de Málaga",
+    },
+  ],
+  hasOccupation: [
+    {
+      "@type": "Occupation",
+      name: "Escritor de fantasía oscura",
+    },
+    {
+      "@type": "Occupation",
+      name: "Ingeniero de Inteligencia Artificial",
+    },
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "author contact",
+    email: "contacto@amaragones.com",
+    availableLanguage: "Spanish",
+  },
   description:
-    "Autor de fantasía oscura nacido en La Carlota, Córdoba. Ingeniero de IA y escritor de la Saga Similis.",
+    "Autor español de fantasía oscura nacido en La Carlota, Córdoba. Licenciado en Bioquímica por la Universidad de Málaga y especializado en Machine Learning e Inteligencia Artificial. Escritor de la Saga Similis.",
 });
 
-const jsonLdBook = JSON.stringify({
+const jsonLdBookSeries = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Book",
-  name: "Similis: Pluma y Espada",
+  "@type": "BookSeries",
+  name: "Saga Similis",
   author: {
     "@type": "Person",
     name: "A. M. Aragonés",
+    url: "https://www.amaragones.com",
   },
+  numberOfItems: 4,
   inLanguage: "es",
-  genre: "Fantasía oscura",
-  isPartOf: {
-    "@type": "BookSeries",
-    name: "Saga Similis",
-  },
+  genre: ["Fantasía oscura", "Fantasía épica"],
   url: "https://www.amaragones.com",
+  description:
+    "Serie de cuatro novelas de fantasía oscura escrita por A. M. Aragonés. Los títulos son: Similis: Pluma y Espada (I), Similis: Reino de Alas (II), Similis: La Era Oscura (III) y Similis: El Último Refugio (IV).",
+});
+
+const jsonLdBooks = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      name: "Similis: Pluma y Espada",
+      position: 1,
+      author: {
+        "@type": "Person",
+        name: "A. M. Aragonés",
+        url: "https://www.amaragones.com",
+      },
+      inLanguage: "es",
+      genre: "Fantasía oscura",
+      description:
+        "Primera novela de la Saga Similis escrita por A. M. Aragonés. Inicio de una tetralogía de fantasía oscura ambientada en un universo de leyendas olvidadas.",
+      isPartOf: {
+        "@type": "BookSeries",
+        name: "Saga Similis",
+      },
+      url: "https://www.amaragones.com/store",
+    },
+    {
+      "@type": "Book",
+      name: "Similis: Reino de Alas",
+      position: 2,
+      author: {
+        "@type": "Person",
+        name: "A. M. Aragonés",
+        url: "https://www.amaragones.com",
+      },
+      inLanguage: "es",
+      genre: "Fantasía oscura",
+      description:
+        "Segunda novela de la Saga Similis escrita por A. M. Aragonés. La saga continúa su exploración de un universo de oscuridad y poder.",
+      isPartOf: {
+        "@type": "BookSeries",
+        name: "Saga Similis",
+      },
+      url: "https://www.amaragones.com",
+    },
+    {
+      "@type": "Book",
+      name: "Similis: La Era Oscura",
+      position: 3,
+      author: {
+        "@type": "Person",
+        name: "A. M. Aragonés",
+        url: "https://www.amaragones.com",
+      },
+      inLanguage: "es",
+      genre: "Fantasía oscura",
+      description:
+        "Tercera novela de la Saga Similis escrita por A. M. Aragonés. Próximamente.",
+      isPartOf: {
+        "@type": "BookSeries",
+        name: "Saga Similis",
+      },
+      url: "https://www.amaragones.com",
+    },
+    {
+      "@type": "Book",
+      name: "Similis: El Último Refugio",
+      position: 4,
+      author: {
+        "@type": "Person",
+        name: "A. M. Aragonés",
+        url: "https://www.amaragones.com",
+      },
+      inLanguage: "es",
+      genre: "Fantasía oscura",
+      description:
+        "Cuarta y última novela de la Saga Similis escrita por A. M. Aragonés. El desenlace épico de la tetralogía. Próximamente.",
+      isPartOf: {
+        "@type": "BookSeries",
+        name: "Saga Similis",
+      },
+      url: "https://www.amaragones.com",
+    },
+  ],
+});
+
+const jsonLdFaq = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Quién es A. M. Aragonés?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A. M. Aragonés (Antonio Ángel Martínez Aragonés) es un escritor español de fantasía oscura nacido en La Carlota, Córdoba. Licenciado en Bioquímica por la Universidad de Málaga y especializado en Inteligencia Artificial y Machine Learning, combina su carrera como ingeniero de IA con su vocación literaria. Es el autor de la Saga Similis.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué es la Saga Similis?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La Saga Similis es una serie de cuatro novelas de fantasía oscura escrita por A. M. Aragonés. Sus títulos son: Similis: Pluma y Espada (I), Similis: Reino de Alas (II), Similis: La Era Oscura (III) y Similis: El Último Refugio (IV).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuál es el primer libro de la Saga Similis?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El primer libro de la Saga Similis es Similis: Pluma y Espada, primer volumen de la tetralogía de fantasía oscura escrita por A. M. Aragonés.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuántos libros tiene la Saga Similis?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La Saga Similis está compuesta por cuatro novelas: Similis: Pluma y Espada (I), Similis: Reino de Alas (II), Similis: La Era Oscura (III) y Similis: El Último Refugio (IV).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Dónde puedo comprar los libros o merchandising de A. M. Aragonés?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los libros y el merchandising exclusivo de la Saga Similis —sudaderas, camisetas, marcapáginas y tazas— están disponibles en la tienda oficial del autor en amaragones.com/store.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué género literario escribe A. M. Aragonés?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A. M. Aragonés escribe fantasía oscura, un subgénero que combina elementos de fantasía épica con atmósferas sombrías, leyendas oscuras y conflictos morales complejos.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cómo puedo contactar o seguir a A. M. Aragonés?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Puedes seguir a A. M. Aragonés en Instagram, TikTok, YouTube, X y Bluesky bajo el handle @aamaragones. También puedes contactar por correo electrónico en contacto@amaragones.com.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Tiene A. M. Aragonés publicaciones científicas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí. A. M. Aragonés compagina su carrera como ingeniero de IA con una trayectoria investigadora reflejada en publicaciones científicas de diverso impacto, además de su obra narrativa y poética.",
+      },
+    },
+  ],
 });
 ---
 
@@ -56,7 +256,9 @@ const jsonLdBook = JSON.stringify({
   <Fragment slot="head">
     <script type="application/ld+json" set:html={jsonLdWebSite} />
     <script type="application/ld+json" set:html={jsonLdPerson} />
-    <script type="application/ld+json" set:html={jsonLdBook} />
+    <script type="application/ld+json" set:html={jsonLdBookSeries} />
+    <script type="application/ld+json" set:html={jsonLdBooks} />
+    <script type="application/ld+json" set:html={jsonLdFaq} />
   </Fragment>
   <Header slot="header" />
 
@@ -70,5 +272,148 @@ const jsonLdBook = JSON.stringify({
     <WorksCarousel />
   </section>
 
+  <section
+    id="faq"
+    class="faq-section"
+    role="region"
+    aria-label="Preguntas frecuentes"
+  >
+    <div class="container">
+      <div class="section-header font-titulo">Preguntas Frecuentes</div>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt class="faq-question font-titulo">¿Qué es la Saga Similis?</dt>
+          <dd class="faq-answer">
+            La Saga Similis es una serie de cuatro novelas de fantasía oscura
+            escrita por A. M. Aragonés. Sus títulos son: <em
+              >Similis: Pluma y Espada</em
+            > (I), <em>Similis: Reino de Alas</em> (II), <em
+              >Similis: La Era Oscura</em
+            > (III) y <em>Similis: El Último Refugio</em> (IV).
+          </dd>
+        </div>
+        <div class="faq-item">
+          <dt class="faq-question font-titulo">
+            ¿Dónde puedo comprar los libros o el merchandising?
+          </dt>
+          <dd class="faq-answer">
+            La primera entrega de la Saga Similis y el merchandising exclusivo
+            —sudaderas, camisetas, marcapáginas y tazas— estarán disponibles
+            próximamente en la <a href="/store">tienda oficial del autor</a>.
+          </dd>
+        </div>
+        <div class="faq-item">
+          <dt class="faq-question font-titulo">
+            ¿Qué género literario escribe A. M. Aragonés?
+          </dt>
+          <dd class="faq-answer">
+            A. M. Aragonés escribe fantasía oscura, un subgénero que combina
+            elementos de fantasía épica con atmósferas sombrías, leyendas
+            oscuras y conflictos morales complejos.
+          </dd>
+        </div>
+        <div class="faq-item">
+          <dt class="faq-question font-titulo">
+            ¿Cómo puedo contactar o seguir al autor?
+          </dt>
+          <dd class="faq-answer">
+            Puedes seguir a A. M. Aragonés en <a
+              href="https://instagram.com/aamaragones"
+              target="_blank"
+              rel="noopener noreferrer">Instagram</a
+            >, <a
+              href="https://tiktok.com/@aamaragones"
+              target="_blank"
+              rel="noopener noreferrer">TikTok</a
+            >, <a
+              href="https://youtube.com/@aamaragones"
+              target="_blank"
+              rel="noopener noreferrer">YouTube</a
+            >, <a
+              href="https://x.com/aamaragones"
+              target="_blank"
+              rel="noopener noreferrer">X</a
+            > y <a
+              href="https://bsky.app/profile/aamaragones.bsky.social"
+              target="_blank"
+              rel="noopener noreferrer">Bluesky</a
+            > bajo el handle <strong>@aamaragones</strong>. También puedes
+            escribir a <a href="mailto:contacto@amaragones.com"
+              >contacto@amaragones.com</a
+            >.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  .faq-section {
+    padding: 5rem 0 6rem;
+    background: var(--color-bg-secondary, #0f1a24);
+  }
+
+  .faq-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .faq-list {
+    margin: 2.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .faq-item {
+    border-left: 2px solid var(--color-gold, #b68a3d);
+    padding: 0.25rem 0 0.25rem 1.5rem;
+  }
+
+  .faq-question {
+    font-size: 1.05rem;
+    color: var(--color-text-primary, #e8e1d1);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+  }
+
+  .faq-answer {
+    font-family: var(--font-body, "Cormorant Garamond", serif);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary, #b7b2a6);
+    margin: 0;
+  }
+
+  .faq-answer a {
+    color: var(--color-gold, #b68a3d);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .faq-answer a:hover {
+    color: var(--color-gold-light, #d5b06a);
+  }
+
+  :global(.light-mode) .faq-section {
+    background: var(--lm-bg-secondary, #eae1d3);
+  }
+
+  :global(.light-mode) .faq-question {
+    color: var(--lm-text-primary, #2a241d);
+  }
+
+  :global(.light-mode) .faq-answer {
+    color: var(--lm-text-secondary, #5a5147);
+  }
+
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 3.5rem 0 4rem;
+    }
+  }
+</style>

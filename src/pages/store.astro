@@ -14,6 +14,179 @@ import sudaderaBlanca from "../assets/merchandising/sudadera_blanca.png";
 import separadores from "../assets/merchandising/marcapaginas.png";
 import pocketNeg from "../assets/logo/pocket-.png";
 import tazasAlquimia from "../assets/merchandising/tazas_alquimia.png";
+
+const jsonLdBreadcrumb = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: "https://www.amaragones.com",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Tienda",
+            item: "https://www.amaragones.com/store",
+        },
+    ],
+});
+
+const jsonLdVideo = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Tráiler oficial de Similis: Pluma y Espada",
+    description:
+        "Tráiler oficial del primer libro de la Saga Similis, 'Pluma y Espada', de A. M. Aragonés. Fantasía oscura.",
+    thumbnailUrl: "https://img.youtube.com/vi/p0Pbh2myy2E/maxresdefault.jpg",
+    embedUrl: "https://www.youtube.com/embed/p0Pbh2myy2E",
+    contentUrl: "https://www.youtube.com/watch?v=p0Pbh2myy2E",
+    publisher: {
+        "@type": "Person",
+        name: "A. M. Aragonés",
+        url: "https://www.amaragones.com",
+    },
+    inLanguage: "es",
+});
+
+const jsonLdProducts = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Merchandising oficial Saga Similis",
+    description:
+        "Merchandising exclusivo de la Saga Similis de A. M. Aragonés: sudaderas, camisetas, marcapáginas y tazas.",
+    numberOfItems: 7,
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            item: {
+                "@type": "Product",
+                name: "Sudadera Negra Saga Similis — Edición Sin Bolsillo",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Sudadera negra oficial de la Saga Similis de A. M. Aragonés. Edición Sin Bolsillo.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            item: {
+                "@type": "Product",
+                name: "Sudadera Blanca Saga Similis — Edición Blanca",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Sudadera blanca oficial de la Saga Similis de A. M. Aragonés. Edición Blanca.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 3,
+            item: {
+                "@type": "Product",
+                name: "Camiseta Negra Saga Similis — Edición Limitada",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Camiseta negra oficial de la Saga Similis de A. M. Aragonés. Edición Limitada.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 4,
+            item: {
+                "@type": "Product",
+                name: "Camiseta Blanca Saga Similis — Edición Blanca",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Camiseta blanca oficial de la Saga Similis de A. M. Aragonés. Edición Blanca.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 5,
+            item: {
+                "@type": "Product",
+                name: "Sudadera Negra con Bolsillo Saga Similis — Comodidad Premium",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Sudadera negra con bolsillo canguro oficial de la Saga Similis de A. M. Aragonés. Comodidad Premium.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 6,
+            item: {
+                "@type": "Product",
+                name: "Marcapáginas Saga Similis — Set de 3",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Set de 3 marcapáginas oficiales de la Saga Similis de A. M. Aragonés.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 7,
+            item: {
+                "@type": "Product",
+                name: "Tazas Alquimia Saga Similis — Set de 3",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Set de 3 tazas de alquimia oficiales de la Saga Similis de A. M. Aragonés.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+    ],
+});
 ---
 
 <BaseLayout
@@ -21,6 +194,11 @@ import tazasAlquimia from "../assets/merchandising/tazas_alquimia.png";
     description="Tienda oficial de A. M. Aragonés. Encuentra libros de la Saga Similis y merchandising exclusivo de fantasía oscura."
     keywords="tienda Similis, comprar Similis, merchandising A. M. Aragonés, libros fantasía oscura, Saga Similis tienda"
 >
+    <Fragment slot="head">
+        <script type="application/ld+json" set:html={jsonLdBreadcrumb} />
+        <script type="application/ld+json" set:html={jsonLdVideo} />
+        <script type="application/ld+json" set:html={jsonLdProducts} />
+    </Fragment>
     <Header slot="header" />
 
     <StoreHero

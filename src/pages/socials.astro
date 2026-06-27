@@ -5,6 +5,46 @@ import Footer from "../components/home/Footer.astro";
 import SocialsList from "../components/socials/Socials.astro";
 import SocialHero from "../components/socials/SocialHero.astro";
 import baseNeg from "../assets/logo/base-.png";
+
+const jsonLdBreadcrumb = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: "https://www.amaragones.com",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Redes Sociales",
+            item: "https://www.amaragones.com/socials",
+        },
+    ],
+});
+
+const jsonLdSocialPage = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: "Redes Sociales de A. M. Aragonés",
+    description:
+        "Perfiles oficiales de A. M. Aragonés en Instagram, TikTok, YouTube, X y Bluesky (@aamaragones).",
+    url: "https://www.amaragones.com/socials",
+    about: {
+        "@type": "Person",
+        name: "A. M. Aragonés",
+        url: "https://www.amaragones.com",
+        sameAs: [
+            "https://instagram.com/aamaragones",
+            "https://tiktok.com/@aamaragones",
+            "https://youtube.com/@aamaragones",
+            "https://x.com/aamaragones",
+            "https://bsky.app/profile/aamaragones.bsky.social",
+        ],
+    },
+});
 ---
 
 <BaseLayout
@@ -12,6 +52,10 @@ import baseNeg from "../assets/logo/base-.png";
     description="Sigue a A. M. Aragonés en Instagram y otras redes sociales. Mantente al día sobre la Saga Similis y novedades del autor."
     keywords="A. M. Aragonés redes sociales, Instagram aamaragones, Similis autor redes"
 >
+    <Fragment slot="head">
+        <script type="application/ld+json" set:html={jsonLdBreadcrumb} />
+        <script type="application/ld+json" set:html={jsonLdSocialPage} />
+    </Fragment>
     <Header slot="header" />
 
     <div class="socials-page">
