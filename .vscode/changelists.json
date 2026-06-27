@@ -3,22 +3,12 @@
     {
       "name": "Default",
       "files": [
-        "src/components/home/ThemeToggle.astro",
-        ".astro/settings.json",
-        ".astro/types.d.ts",
-        ".vscode/changelists.json",
-        "src/styles/carousel.css",
-        "src/components/home/Percentage.astro",
-        "src/components/home/Works.astro",
-        "src/pages/index.astro",
-        "src/styles/global.css",
-        "src/components/socials/ShieldIcon.astro",
-        "src/components/socials/SocialCard.astro",
-        "src/components/home/Header.astro",
         "src/pages/store.astro",
-        "src/components/store/Store.astro",
-        "src/components/home/WorksCarousel.astro",
-        "src/components/store/StoreElement.astro"
+        ".vscode/changelists.json",
+        "src/styles/global.css",
+        "src/styles/carousel.css",
+        "src/components/home/Footer.astro",
+        "src/components/home/WorksCarousel.astro"
       ]
     }
   ],

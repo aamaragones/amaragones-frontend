@@ -2,12 +2,29 @@
 
 ---
 
+<style>
+    .footer-tags {
+        text-align: center;
+    }
+
+    .mobile-break {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-break {
+            display: block;
+        }
+    }
+</style>
+
 <footer>
     <div class="container footer-tags font-ui">
         <span class="contact-email">contacto@amaragones.com</span>
         <br />
         <span class="copyright"
-            >&copy; 2026 A. M. Aragonés. Todos los derechos reservados.</span
+            >&copy; 2026 A. M. Aragonés.<br class="mobile-break" /> Todos los derechos
+            reservados.</span
         >
     </div>
 </footer>

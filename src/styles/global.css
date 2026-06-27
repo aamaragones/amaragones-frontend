@@ -95,7 +95,7 @@ nav ul li a:hover {
 .hero {
     text-align: center;
     padding: 8rem 2rem;
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 1) 90%), url('../assets/hero/home_hero.png') top/cover;
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 0.6) 90%), url('../assets/hero/home_hero.png') top/cover;
     border-bottom: 1px solid rgba(138, 106, 61, 0.2)
 }
 
@@ -121,7 +121,7 @@ nav ul li a:hover {
 
 
 html.light-mode .hero {
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40 36 12) 90%), url('/src/assets/hero/home_hero.png') top / cover;
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40, 36, 12, 0.6) 90%), url('/src/assets/hero/home_hero.png') top / cover;
 }
 
 .btn-primary {
@@ -219,9 +219,57 @@ html.light-mode .about-image {
     background-color: black;
 }
 
+/* Mid resolutions: tablets and small desktops — more breathing room on sides,
+   image wrapper constrained so empty mask space doesn't push text to the edge */
+@media (min-width: 701px) and (max-width: 1920px) {
+    #about .container {
+        padding: 0 0 1rem 3.5rem;
+    }
+
+    .about .container {
+        gap: 3rem;
+    }
+
+    .about-image-wrapper {
+        flex: 0 0 38%;
+    }
+}
+
 /* Use the author image as background of the about-content on wide screens
    and hide the separate .about-image element. Also switch the image in
    light mode to shape+.png */
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    .about .container .about-image-wrapper {
+        display: block;
+        position: absolute;
+        right: 10rem;
+        top: 50%;
+        transform: translateY(-50%);
+        flex: none;
+        width: 60%;
+        height: auto;
+        pointer-events: none;
+        z-index: 0;
+        transform-origin: right center;
+    }
+
+    .about-image {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        opacity: 0.25;
+        display: block;
+        pointer-events: none;
+    }
+
+    #about .container {
+        padding-right: 3.5rem;
+    }
+
+}
+
+
 @media (max-width: 700px) {
 
     /* show the decorative image as an absolutely-positioned <img>
@@ -437,6 +485,10 @@ html.light-mode .about-image {
 /* Por defecto mostramos la luna; en modo claro mostramos el sol */
 .theme-toggle .icon-sun {
     display: none;
+    width: 26px;
+    height: 26px;
+    position: relative;
+    top: -2px;
 }
 
 .theme-toggle .icon-moon {

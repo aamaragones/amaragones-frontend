@@ -56,13 +56,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
     background-color: var(--acento-oro);
     color: var(--fondo-claro);
     border-radius: 50%;
     margin-bottom: 1.7rem;
     line-height: 1;
+    font-size: 0.8rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(138, 106, 61, 0.4);
 }
 
 /* Swiper navigation buttons */
