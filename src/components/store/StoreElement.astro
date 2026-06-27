@@ -4,6 +4,7 @@ interface Props {
     subtitle?: string;
     backgroundGradient?: string;
     image?: string;
+    textColor?: string;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
     subtitle,
     backgroundGradient = "linear-gradient(135deg, rgba(44, 90, 122, 0.8) 0%, rgba(45, 90, 61, 0.8) 100%)",
     image,
+    textColor = "#E8E1D1",
 } = Astro.props;
 
 const backgroundStyle = image
@@ -18,12 +20,21 @@ const backgroundStyle = image
     : `background: ${backgroundGradient}, radial-gradient(circle at center, rgba(198, 161, 91, 0.1) 0%, rgba(15, 26, 36, 1) 100%);`;
 ---
 
-<div class="card" style={backgroundStyle}>
+<div
+    class="card store-element-card"
+    style={`${backgroundStyle} --card-text-color: ${textColor}; border: none;`}
+>
     <h3 class="font-titulo">{title}</h3>
-    {subtitle && <div class="card-subtitle font-ui">{subtitle}</div>}
 </div>
 
 <style>
+    .store-element-card {
+        padding-top: 4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 380px;
+    }
+
     .card {
         background-size: cover;
         background-position: center;
@@ -37,11 +48,6 @@ const backgroundStyle = image
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(
-            circle at center,
-            rgba(198, 161, 91, 0.1) 0%,
-            rgba(15, 26, 36, 0.9) 100%
-        );
         pointer-events: none;
     }
 
@@ -52,13 +58,13 @@ const backgroundStyle = image
 
     .card h3 {
         font-size: 1.5rem;
-        color: var(--texto-claro);
+        color: var(--card-text-color);
         margin-bottom: 2rem;
         line-height: 1.3;
     }
 
     .card-subtitle {
-        color: var(--acento-bronce);
+        color: var(--card-text-color);
         margin-top: auto;
     }
 </style>

@@ -1,5 +1,6 @@
 ---
 import worksStack from "../../scripts/works-stack.js?url";
+import Percentage from "./Percentage.astro";
 ---
 
 <section
@@ -11,23 +12,37 @@ import worksStack from "../../scripts/works-stack.js?url";
         <div class="works-header font-titulo">Saga Similis</div>
         <div class="cards-container">
             <div class="card pluma-y-espada">
-                <h3 class="font-titulo">Similis<br />Pluma y Espada</h3>
-                <div class="card-subtitle font-ui">Saga Similis<br />I</div>
+                <h3 style="color: #E8E1D1" class="font-titulo">
+                    Similis<br />Pluma y Espada
+                </h3>
+                <div class="card-subtitle font-ui">
+                    <span class="roman-badge">I</span>
+                </div>
+                <Percentage percentage={85} labelColor="#E8E1D1" />
             </div>
 
             <div class="card">
                 <h3 class="font-titulo">Similis<br />Reino de Alas</h3>
-                <div class="card-subtitle font-ui">Saga Similis<br />II</div>
+                <div class="card-subtitle font-ui">
+                    <span class="roman-badge">II</span>
+                </div>
+                <Percentage percentage={15} />
             </div>
 
             <div class="card">
                 <h3 class="font-titulo">Similis<br />La Era Oscura</h3>
-                <div class="card-subtitle font-ui">Saga Similis<br />III</div>
+                <div class="card-subtitle font-ui">
+                    <span class="roman-badge">III</span>
+                </div>
+                <Percentage label="Próximamente" />
             </div>
 
             <div class="card">
                 <h3 class="font-titulo">Similis<br />El Último Refugio</h3>
-                <div class="card-subtitle font-ui">Saga Similis<br />IV</div>
+                <div class="card-subtitle font-ui">
+                    <span class="roman-badge">IV</span>
+                </div>
+                <Percentage label="Próximamente" />
             </div>
         </div>
     </div>

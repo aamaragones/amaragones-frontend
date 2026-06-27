@@ -120,8 +120,16 @@ nav ul li a:hover {
 }
 
 
-html.light-mode .hero {
+html.light-mode .hero:not(.socials-hero):not(.store-hero) {
     background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40, 36, 12, 0.6) 90%), url('/src/assets/hero/home_hero.png') top / cover;
+}
+
+html.light-mode .socials-hero {
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40, 36, 12, 0.6) 90%), url('../assets/hero/socials_hero.png') top / cover;
+}
+
+html.light-mode .store-hero {
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40, 36, 12, 0.6) 90%), url('../assets/hero/store_hero.png') top / cover;
 }
 
 .btn-primary {
@@ -312,7 +320,7 @@ html.light-mode .about-image {
 }
 
 .works {
-    padding: 2rem 10% 5rem;
+    padding: 2rem 5% 5rem;
     text-align: center
 }
 
@@ -343,6 +351,38 @@ html.light-mode .about-image {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem
+}
+
+/* Works no-carousel: fixed-size cards matching carousel visual style */
+.works-no-carousel .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.works-no-carousel .card {
+    padding: 2.2rem 2.5rem;
+    height: 390px;
+    width: 280px;
+    min-width: unset;
+    flex-shrink: 0;
+}
+
+.works-no-carousel .roman-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: var(--acento-oro);
+    color: var(--fondo-claro);
+    border-radius: 50%;
+    margin-bottom: 1.7rem;
+    line-height: 1;
+    font-size: 0.8rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(138, 106, 61, 0.4);
 }
 
 .card {
@@ -666,11 +706,11 @@ html.light-mode .theme-toggle .icon-moon {
 }
 
 .store-hero {
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 1) 90%), url('../assets/hero/store_hero.png') top/cover;
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 0.6) 90%), url('../assets/hero/store_hero.png') top/cover;
 }
 
 .socials-hero {
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 1) 90%), url('../assets/hero/socials_hero.png') top/cover;
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgba(15, 26, 36, 0.6) 90%), url('../assets/hero/socials_hero.png') top/cover;
 }
 
 .footer-tags .contact-email {
