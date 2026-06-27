@@ -1,5 +1,5 @@
 site/node_modules/
 site/.next/
 dist/
-node_modules
+node_modules/
 .vscode/changelists.json
