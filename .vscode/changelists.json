@@ -5,9 +5,10 @@
       "files": [
         "src/styles/global.css",
         ".vscode/changelists.json",
-        "src/pages/store.astro",
         "src/pages/socials.astro",
-        "src/layouts/BaseLayout.astro"
+        "src/components/store/StoreElement.astro",
+        "src/pages/store.astro",
+        "src/components/store/Store.astro"
       ]
     }
   ],

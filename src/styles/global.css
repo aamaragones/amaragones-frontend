@@ -121,7 +121,7 @@ nav ul li a:hover {
 
 
 html.light-mode .hero:not(.socials-hero):not(.store-hero) {
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40, 36, 12, 0.6) 90%), url('/src/assets/hero/home_hero.png') top / cover;
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(38, 36, 24, 0.6) 90%), url('/src/assets/hero/home_hero.png') top / cover;
 }
 
 @media (max-width: 700px) {
@@ -131,11 +131,11 @@ html.light-mode .hero:not(.socials-hero):not(.store-hero) {
 }
 
 html.light-mode .socials-hero {
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40, 36, 12, 0.6) 90%), url('../assets/hero/socials_hero.png') top / cover;
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(38, 36, 24, 0.6) 90%), url('../assets/hero/socials_hero.png') top / cover;
 }
 
 html.light-mode .store-hero {
-    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(40, 36, 12, 0.8) 90%), url('../assets/hero/store_hero.png') top / cover;
+    background: radial-gradient(circle at center, rgba(44, 90, 122, 0.1) 0%, rgb(38, 36, 24, 0.8) 90%), url('../assets/hero/store_hero.png') top / cover;
 }
 
 .btn-primary {
