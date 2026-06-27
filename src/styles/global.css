@@ -280,6 +280,14 @@ html.light-mode .about-image {
 
 @media (max-width: 700px) {
 
+    .hero {
+        background-position: right;
+    }
+
+    .socials-hero {
+        background-position: -205px !important;
+    }
+
     /* show the decorative image as an absolutely-positioned <img>
        so we can control opacity and stacking order */
     .about .container .about-image-wrapper {
@@ -364,7 +372,7 @@ html.light-mode .about-image {
 .works-no-carousel .card {
     padding: 2.2rem 2.5rem;
     height: 390px;
-    width: 280px;
+    width: 260px;
     min-width: unset;
     flex-shrink: 0;
 }

@@ -5,10 +5,8 @@
       "files": [
         "src/styles/global.css",
         ".vscode/changelists.json",
-        "src/components/home/Works.astro",
-        "src/components/store/StoreElement.astro",
         "src/pages/store.astro",
-        "src/pages/socials.astro"
+        "src/styles/carousel.css"
       ]
     }
   ],
