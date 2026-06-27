@@ -7,11 +7,57 @@ import Works from "../components/home/Works.astro";
 import WorksCarousel from "../components/home/WorksCarousel.astro";
 import Footer from "../components/home/Footer.astro";
 
-const title = "Inicio | A. M. Aragonés";
-const description = "Sitio oficial de A. M. Aragonés — autor de Similis.";
+const title = "A. M. Aragonés — Autor de Similis | Fantasía Oscura";
+const description =
+  "Sitio oficial de A. M. Aragonés, autor de la Saga Similis. Fantasía oscura y leyendas olvidadas. Descubre sus obras, novedades y más.";
+const keywords =
+  "A. M. Aragonés, Similis, Pluma y Espada, Saga Similis, fantasía oscura, autor español, novela fantástica, leyendas olvidadas";
+
+const jsonLdWebSite = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "A. M. Aragonés",
+  url: "https://www.amaragones.com",
+  description: description,
+  inLanguage: "es",
+});
+
+const jsonLdPerson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "A. M. Aragonés",
+  alternateName: "Antonio Ángel Martínez Aragonés",
+  url: "https://www.amaragones.com",
+  sameAs: ["https://instagram.com/aamaragones"],
+  jobTitle: "Escritor",
+  description:
+    "Autor de fantasía oscura nacido en La Carlota, Córdoba. Ingeniero de IA y escritor de la Saga Similis.",
+});
+
+const jsonLdBook = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "Similis: Pluma y Espada",
+  author: {
+    "@type": "Person",
+    name: "A. M. Aragonés",
+  },
+  inLanguage: "es",
+  genre: "Fantasía oscura",
+  isPartOf: {
+    "@type": "BookSeries",
+    name: "Saga Similis",
+  },
+  url: "https://www.amaragones.com",
+});
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={jsonLdWebSite} />
+    <script type="application/ld+json" set:html={jsonLdPerson} />
+    <script type="application/ld+json" set:html={jsonLdBook} />
+  </Fragment>
   <Header slot="header" />
 
   <Hero />

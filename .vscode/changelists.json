@@ -3,9 +3,19 @@
     {
       "name": "Default",
       "files": [
-        "src/styles/carousel.css",
-        "src/components/home/WorksCarousel.astro",
-        ".vscode/changelists.json"
+        "astro.config.mjs",
+        ".vscode/changelists.json",
+        "package-lock.json",
+        "package.json",
+        "public/CNAME",
+        "public/robots.txt",
+        "src/layouts/BaseLayout.astro",
+        "src/pages/index.astro",
+        "src/pages/socials.astro",
+        "src/pages/store.astro",
+        ".astro/types.d.ts",
+        ".public/CNAME",
+        "public/Hero-Preview.png"
       ]
     }
   ],

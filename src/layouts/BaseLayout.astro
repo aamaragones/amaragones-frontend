@@ -1,11 +1,16 @@
 ---
 const {
-    title = "Alquimista de lo imposible",
-    description = "Sitio oficial del autor Antonio Ángel Martínez Aragonés",
+    title = "Alquimista de lo imposible | A. M. Aragonés",
+    description = "Sitio oficial de A. M. Aragonés, autor de Similis. Fantasía oscura y leyendas olvidadas.",
+    image = "/og-image.png",
+    keywords = "A. M. Aragonés, Similis, fantasía oscura, autor, novela fantástica, Saga Similis",
 } = Astro.props;
 import "../styles/global.css";
 import favNeg from "../assets/logo/favicon_fringe+.png";
 import favPos from "../assets/logo/favicon_fringe-.png";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -15,6 +20,24 @@ import favPos from "../assets/logo/favicon_fringe-.png";
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="author" content="A. M. Aragonés" />
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImageURL} />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:site_name" content="A. M. Aragonés" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageURL} />
 
         <link
             id="favicon"
@@ -57,6 +80,8 @@ import favPos from "../assets/logo/favicon_fringe-.png";
             href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
             rel="stylesheet"
         />
+
+        <slot name="head" />
 
         <!-- Global styles are imported in the component frontmatter so Astro can bundle them -->
     </head>
