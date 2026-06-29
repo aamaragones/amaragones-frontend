@@ -3,12 +3,14 @@
     {
       "name": "Default",
       "files": [
-        "src/pages/index.astro",
+        "src/components/home/Footer.astro",
         ".vscode/changelists.json",
-        "src/pages/socials.astro",
-        "public/llms.txt",
-        "public/robots.txt",
-        "src/pages/store.astro"
+        "src/layouts/BaseLayout.astro",
+        "public/favicon-dark.png",
+        "public/favicon-light.png",
+        "src/styles/carousel.css",
+        "src/pages/index.astro",
+        "src/components/home/Header.astro"
       ]
     }
   ],

@@ -6,8 +6,8 @@ const {
     keywords = "A. M. Aragonés, Similis, fantasía oscura, autor, novela fantástica, Saga Similis",
 } = Astro.props;
 import "../styles/global.css";
-import favNeg from "../assets/logo/favicon_fringe+.png";
-import favPos from "../assets/logo/favicon_fringe-.png";
+const favNeg = "/favicon-light.png";
+const favPos = "/favicon-dark.png";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
@@ -42,9 +42,11 @@ const ogImageURL = new URL(image, Astro.site);
         <link
             id="favicon"
             rel="icon"
-            href={favNeg.src}
-            data-light={favPos.src}
-            data-dark={favNeg.src}
+            type="image/png"
+            sizes="512x512"
+            href={favNeg}
+            data-light={favPos}
+            data-dark={favNeg}
         />
         <script
             defer

@@ -6,6 +6,7 @@
 .works-carousel-section {
     display: none;
     padding: 4rem 10px !important;
+    padding-bottom: 5rem !important;
 }
 
 @media (max-width: 1444px) {
