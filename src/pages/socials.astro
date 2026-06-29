@@ -71,7 +71,7 @@ const jsonLdSocialPage = JSON.stringify({
                     <span
                         class="pocket-aside"
                         aria-hidden="true"
-                        style={`--mask-image: url('${baseNeg.src}'); position: absolute`}
+                        style={`-webkit-mask-image: url('${baseNeg.src}'); mask-image: url('${baseNeg.src}'); position: absolute`}
                     ></span>
                 </div>
             </div>
@@ -102,8 +102,6 @@ const jsonLdSocialPage = JSON.stringify({
         width: 260px;
         height: 374px;
         pointer-events: none;
-        -webkit-mask-image: var(--mask-image);
-        mask-image: var(--mask-image);
         -webkit-mask-size: contain;
         mask-size: contain;
         -webkit-mask-repeat: no-repeat;

@@ -236,7 +236,7 @@ const jsonLdProducts = JSON.stringify({
                         <span
                             class="pocket-image"
                             aria-hidden="true"
-                            style={`--mask-image: url('${pocketNeg.src}');`}
+                            style={`-webkit-mask-image: url('${pocketNeg.src}'); mask-image: url('${pocketNeg.src}');`}
                         ></span>
                     </div>
                     <blockquote
@@ -250,7 +250,7 @@ const jsonLdProducts = JSON.stringify({
                     <span
                         class="pocket-image"
                         aria-hidden="true"
-                        style={`--mask-image: url('${pocketNeg.src}');`}></span>
+                        style={`-webkit-mask-image: url('${pocketNeg.src}'); mask-image: url('${pocketNeg.src}');`}></span>
                 </div>
                 <blockquote
                     class="video-quote"
@@ -430,8 +430,6 @@ const jsonLdProducts = JSON.stringify({
         display: block;
         width: 384px;
         height: 552px;
-        -webkit-mask-image: var(--mask-image);
-        mask-image: var(--mask-image);
         -webkit-mask-size: contain;
         mask-size: contain;
         -webkit-mask-repeat: no-repeat;

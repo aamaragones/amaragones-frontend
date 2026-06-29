@@ -31,14 +31,8 @@ import shapeNeg from "../../assets/logo/shape-.png";
             <span
                 class="about-image"
                 aria-hidden="true"
-                style={`--mask-image: url('${shapeNeg.src}');`}></span>
+                style={`-webkit-mask-image: url('${shapeNeg.src}'); mask-image: url('${shapeNeg.src}');`}
+            ></span>
         </div>
     </div>
 </section>
-
-<style>
-    .about-image {
-        -webkit-mask-image: var(--mask-image);
-        mask-image: var(--mask-image);
-    }
-</style>
