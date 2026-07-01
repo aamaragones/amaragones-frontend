@@ -3,9 +3,8 @@
     {
       "name": "Default",
       "files": [
-        "src/styles/global.css",
-        ".vscode/changelists.json",
-        "src/pages/store.astro"
+        "src/pages/store.astro",
+        ".vscode/changelists.json"
       ]
     }
   ],

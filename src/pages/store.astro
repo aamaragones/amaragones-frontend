@@ -1,66 +1,613 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import StoreHero from "../components/StoreHero.astro";
-import Store from "../components/Store.astro";
-import StoreElement from "../components/StoreElement.astro";
+import Header from "../components/home/Header.astro";
+import Footer from "../components/home/Footer.astro";
+import StoreHero from "../components/store/StoreHero.astro";
+import StoreSection from "../components/store/Store.astro";
+import StoreElement from "../components/store/StoreElement.astro";
+import worksStack from "../scripts/works-stack.js?url";
+import camisetaNegra from "../assets/merchandising/camiseta_negra.png";
+import camisetaBlanca from "../assets/merchandising/camiseta_blanca.png";
+import sudaderaNegra from "../assets/merchandising/sudadera_negra_bolsillo.png";
+import sudaderaNegraSin from "../assets/merchandising/sudadera_negra.png";
+import sudaderaBlanca from "../assets/merchandising/sudadera_blanca.png";
+import separadores from "../assets/merchandising/marcapaginas.png";
+import pocketNeg from "../assets/logo/pocket-.png";
+import tazasAlquimia from "../assets/merchandising/tazas_alquimia.png";
+
+const jsonLdBreadcrumb = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: "https://www.amaragones.com",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Tienda",
+            item: "https://www.amaragones.com/store",
+        },
+    ],
+});
+
+const jsonLdVideo = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Tráiler oficial de Similis: Pluma y Espada",
+    description:
+        "Tráiler oficial del primer libro de la Saga Similis, 'Pluma y Espada', de A. M. Aragonés. Fantasía oscura.",
+    thumbnailUrl: "https://img.youtube.com/vi/p0Pbh2myy2E/maxresdefault.jpg",
+    embedUrl: "https://www.youtube.com/embed/p0Pbh2myy2E",
+    contentUrl: "https://www.youtube.com/watch?v=p0Pbh2myy2E",
+    publisher: {
+        "@type": "Person",
+        name: "A. M. Aragonés",
+        url: "https://www.amaragones.com",
+    },
+    inLanguage: "es",
+});
+
+const jsonLdProducts = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Merchandising oficial Saga Similis",
+    description:
+        "Merchandising exclusivo de la Saga Similis de A. M. Aragonés: sudaderas, camisetas, marcapáginas y tazas.",
+    numberOfItems: 7,
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            item: {
+                "@type": "Product",
+                name: "Sudadera Negra Saga Similis — Edición Sin Bolsillo",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Sudadera negra oficial de la Saga Similis de A. M. Aragonés. Edición Sin Bolsillo.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            item: {
+                "@type": "Product",
+                name: "Sudadera Blanca Saga Similis — Edición Blanca",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Sudadera blanca oficial de la Saga Similis de A. M. Aragonés. Edición Blanca.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 3,
+            item: {
+                "@type": "Product",
+                name: "Camiseta Negra Saga Similis — Edición Limitada",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Camiseta negra oficial de la Saga Similis de A. M. Aragonés. Edición Limitada.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 4,
+            item: {
+                "@type": "Product",
+                name: "Camiseta Blanca Saga Similis — Edición Blanca",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Camiseta blanca oficial de la Saga Similis de A. M. Aragonés. Edición Blanca.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 5,
+            item: {
+                "@type": "Product",
+                name: "Sudadera Negra con Bolsillo Saga Similis — Comodidad Premium",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Sudadera negra con bolsillo canguro oficial de la Saga Similis de A. M. Aragonés. Comodidad Premium.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 6,
+            item: {
+                "@type": "Product",
+                name: "Marcapáginas Saga Similis — Set de 3",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Set de 3 marcapáginas oficiales de la Saga Similis de A. M. Aragonés.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+        {
+            "@type": "ListItem",
+            position: 7,
+            item: {
+                "@type": "Product",
+                name: "Tazas Alquimia Saga Similis — Set de 3",
+                brand: { "@type": "Brand", name: "A. M. Aragonés" },
+                description:
+                    "Set de 3 tazas de alquimia oficiales de la Saga Similis de A. M. Aragonés.",
+                image: "https://www.amaragones.com/store",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/PreOrder",
+                    priceCurrency: "EUR",
+                    seller: { "@type": "Person", name: "A. M. Aragonés" },
+                },
+            },
+        },
+    ],
+});
 ---
 
-<BaseLayout title="Tienda" description="Tienda de A. M. Aragonés">
+<BaseLayout
+    title="Tienda | A. M. Aragonés — Libros y Merchandising"
+    description="Tienda oficial de A. M. Aragonés. Encuentra libros de la Saga Similis y merchandising exclusivo de fantasía oscura."
+    keywords="tienda Similis, comprar Similis, merchandising A. M. Aragonés, libros fantasía oscura, Saga Similis tienda"
+>
+    <Fragment slot="head">
+        <script type="application/ld+json" set:html={jsonLdBreadcrumb} />
+        <script type="application/ld+json" set:html={jsonLdVideo} />
+        <script type="application/ld+json" set:html={jsonLdProducts} />
+    </Fragment>
     <Header slot="header" />
 
     <StoreHero
         title="Tienda"
         overtitle="A. M. Aragonés"
-        description="Explora nuestro catálogo de merchandising y libros"
+        description="Explora nuestro catálogo de libros y merchandising"
     />
 
-    <Store title="Merchandising">
+    <StoreSection title="Libros" ariaLabel="Libros disponibles" noStack>
+        <div class="libros-container">
+            <div class="video-anchor">
+                <div class="short-wrapper">
+                    <div id="yt-player"></div>
+                    <button
+                        id="yt-unmute-btn"
+                        aria-label="Activar sonido"
+                        title="Activar sonido"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            width="18"
+                            height="18"
+                        >
+                            <path
+                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="video-proximamente font-ui">Próximamente</div>
+                <div class="mobile-caption" aria-hidden="true">
+                    <div class="mobile-caption-image">
+                        <span
+                            class="pocket-image"
+                            aria-hidden="true"
+                            style={`-webkit-mask-image: url('${pocketNeg.src}'); mask-image: url('${pocketNeg.src}');`}
+                        ></span>
+                    </div>
+                    <blockquote
+                        class="mobile-caption-quote"
+                        aria-label="Cita de la saga Similis"
+                    >
+                        <p>"No os perdáis en similis…"</p>
+                    </blockquote>
+                </div>
+                <div class="pocket-image-wrapper" aria-hidden="true">
+                    <span
+                        class="pocket-image"
+                        aria-hidden="true"
+                        style={`-webkit-mask-image: url('${pocketNeg.src}'); mask-image: url('${pocketNeg.src}');`}
+                    ></span>
+                </div>
+                <blockquote
+                    class="video-quote"
+                    aria-label="Cita de la saga Similis"
+                >
+                    <p>"No os perdáis en similis…"</p>
+                </blockquote>
+            </div>
+        </div>
+    </StoreSection>
+
+    <StoreSection title="Merch" ariaLabel="Merchandising disponible">
         <StoreElement
-            title="Camiseta Pluma y Espada"
+            title="Sudadera Negra"
+            subtitle="Edición Sin Bolsillo"
+            backgroundGradient="linear-gradient(135deg, rgba(50, 70, 50, 0.0) 0%, rgba(70, 50, 70, 0.0) 100%)"
+            image={sudaderaNegraSin.src}
+        />
+        <StoreElement
+            title="Sudadera Blanca"
+            subtitle="Edición Blanca"
+            textColor="#5A5147"
+            backgroundGradient="linear-gradient(135deg, rgba(220, 210, 190, 0.0) 0%, rgba(200, 200, 210, 0.0) 100%)"
+            image={sudaderaBlanca.src}
+        />
+        <StoreElement
+            title="Camiseta Negra"
             subtitle="Edición Limitada"
-            backgroundGradient="linear-gradient(135deg, rgba(70, 50, 30, 0.8) 0%, rgba(40, 60, 80, 0.8) 100%)"
+            backgroundGradient="linear-gradient(135deg, rgba(70, 50, 30, 0.0) 0%, rgba(40, 60, 80, 0.0) 100%)"
+            image={camisetaNegra.src}
         />
         <StoreElement
-            title="Sudadera Saga Similis"
+            title="Camiseta Blanca"
+            subtitle="Edición Blanca"
+            backgroundGradient="linear-gradient(135deg, rgba(220, 210, 190, 0.0) 0%, rgba(200, 200, 210, 0.0) 100%)"
+            textColor="#5A5147"
+            image={camisetaBlanca.src}
+        />
+        <StoreElement
+            title="Sudadera Negra Bolsillo"
             subtitle="Comodidad Premium"
-            backgroundGradient="linear-gradient(135deg, rgba(50, 70, 50, 0.8) 0%, rgba(70, 50, 70, 0.8) 100%)"
-        />
-        <StoreElement
-            title="Taza Alquimista"
-            subtitle="Cerámica Artesanal"
-            backgroundGradient="linear-gradient(135deg, rgba(80, 60, 40, 0.8) 0%, rgba(40, 70, 60, 0.8) 100%)"
+            backgroundGradient="linear-gradient(135deg, rgba(50, 70, 50, 0.0) 0%, rgba(70, 50, 70, 0.0) 100%)"
+            image={sudaderaNegra.src}
         />
         <StoreElement
             title="Marcapáginas"
             subtitle="Set de 3"
-            backgroundGradient="linear-gradient(135deg, rgba(60, 50, 80, 0.8) 0%, rgba(50, 80, 60, 0.8) 100%)"
+            textColor="#5A5147"
+            backgroundGradient="linear-gradient(135deg, rgba(60, 50, 80, 0.0) 0%, rgba(50, 80, 60, 0.0) 100%)"
+            image={separadores.src}
         />
-    </Store>
+        <StoreElement
+            title="Tazas Alquimia"
+            subtitle="Set de 3"
+            textColor="#5A5147"
+            backgroundGradient="linear-gradient(135deg, rgba(60, 50, 80, 0.0) 0%, rgba(50, 80, 60, 0.0) 100%)"
+            image={tazasAlquimia.src}
+        />
+    </StoreSection>
 
-    <Store title="Libros">
-        <StoreElement
-            title="Similis: Pluma y Espada"
-            subtitle="Tomo I"
-            backgroundGradient="linear-gradient(135deg, rgba(100, 70, 40, 0.8) 0%, rgba(50, 80, 100, 0.8) 100%)"
-        />
-        <StoreElement
-            title="Similis: Reino de Alas"
-            subtitle="Tomo II"
-            backgroundGradient="linear-gradient(135deg, rgba(70, 100, 60, 0.8) 0%, rgba(100, 60, 80, 0.8) 100%)"
-        />
-        <StoreElement
-            title="Similis: La Era Oscura"
-            subtitle="Tomo III"
-            backgroundGradient="linear-gradient(135deg, rgba(80, 60, 100, 0.8) 0%, rgba(60, 100, 80, 0.8) 100%)"
-        />
-        <StoreElement
-            title="Similis: El Último Refugio"
-            subtitle="Tomo IV"
-            backgroundGradient="linear-gradient(135deg, rgba(100, 80, 50, 0.8) 0%, rgba(50, 100, 80, 0.8) 100%)"
-        />
-    </Store>
+    <div class="merch-proximamente font-ui">Próximamente</div>
 
     <Footer slot="footer" />
 </BaseLayout>
+
+<script type="module" src={worksStack}></script>
+
+<script is:inline>
+    (function () {
+        var tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(tag);
+    })();
+
+    var ytPlayer;
+    var isMuted = true;
+
+    window.onYouTubeIframeAPIReady = function () {
+        ytPlayer = new YT.Player("yt-player", {
+            videoId: "p0Pbh2myy2E",
+            width: "100%",
+            height: "100%",
+            playerVars: {
+                autoplay: 1,
+                mute: 1,
+                loop: 1,
+                playlist: "p0Pbh2myy2E",
+                controls: 0,
+                modestbranding: 1,
+                rel: 0,
+                playsinline: 1,
+            },
+            events: {
+                onReady: function (e) {
+                    e.target.playVideo();
+                },
+            },
+        });
+    };
+
+    document
+        .getElementById("yt-unmute-btn")
+        .addEventListener("click", function () {
+            if (!ytPlayer) return;
+            if (isMuted) {
+                ytPlayer.unMute();
+                ytPlayer.setVolume(80);
+                isMuted = false;
+                this.setAttribute("aria-label", "Silenciar");
+                this.title = "Silenciar";
+                this.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+            } else {
+                ytPlayer.mute();
+                isMuted = true;
+                this.setAttribute("aria-label", "Activar sonido");
+                this.title = "Activar sonido";
+                this.innerHTML =
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>';
+            }
+        });
+</script>
+
+<style>
+    .libros-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .video-anchor {
+        position: relative;
+    }
+
+    .pocket-image-wrapper {
+        display: none;
+        position: absolute;
+        right: calc(100% + 3rem);
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    @media (min-width: 1024px) {
+        .pocket-image-wrapper {
+            display: block;
+        }
+    }
+
+    .video-quote {
+        display: none;
+        position: absolute;
+        left: calc(100% + 8rem);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 240px;
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--acento-oro);
+        line-height: 1.8;
+        border-left: 1px solid var(--acento-bronce);
+        padding-left: 0.25rem;
+        letter-spacing: 0.03em;
+        pointer-events: none;
+    }
+
+    @media (min-width: 1024px) {
+        .video-quote {
+            display: block;
+        }
+    }
+
+    .pocket-image {
+        display: block;
+        width: 384px;
+        height: 552px;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-mode: luminance;
+        mask-mode: luminance;
+        background-color: white;
+    }
+
+    :global(html.light-mode) .pocket-image {
+        background-color: black;
+    }
+
+    /* Mobile caption: hidden by default, shown only below 1024px */
+    .mobile-caption {
+        display: none;
+    }
+
+    .mobile-caption-quote {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--acento-oro);
+        line-height: 1.8;
+        letter-spacing: 0.03em;
+        pointer-events: none;
+    }
+
+    /* < 500px: quote on top of image (image as faint background) */
+    @media (max-width: 499px) {
+        .mobile-caption {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 340px;
+            min-height: 156px;
+            margin-top: 1.5rem;
+            overflow: hidden;
+        }
+
+        .mobile-caption-image {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .mobile-caption-image .pocket-image {
+            width: 100%;
+            height: 100%;
+            opacity: 0.25;
+        }
+
+        .mobile-caption-quote {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 0.5rem;
+        }
+    }
+
+    /* 500px–1023px: image and quote side by side */
+    @media (min-width: 500px) and (max-width: 1023px) {
+        .mobile-caption {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            max-width: 340px;
+        }
+
+        .mobile-caption-image {
+            flex-shrink: 0;
+            width: 143px;
+            height: 205px;
+        }
+
+        .mobile-caption-image .pocket-image {
+            width: 143px;
+            height: 205px;
+        }
+
+        .mobile-caption-quote {
+            text-align: left;
+            border-left: 1px solid var(--acento-bronce);
+            padding-left: 0.75rem;
+            text-align: center;
+        }
+    }
+
+    .short-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 340px;
+        aspect-ratio: 9 / 16;
+        overflow: hidden;
+        border: 1px solid rgba(138, 106, 61, 0.4);
+    }
+
+    #yt-player {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    #yt-player iframe {
+        width: 100% !important;
+        height: 100% !important;
+        border: none;
+        display: block;
+    }
+
+    #yt-unmute-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.2s;
+        z-index: 10;
+    }
+
+    #yt-unmute-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    #yt-unmute-btn.muted svg path {
+        /* X over the sound icon when muted */
+    }
+
+    .video-proximamente {
+        margin: 0 auto;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--texto-oscuro);
+        text-align: center;
+        padding: 0.5rem 0 0 0;
+        margin-top: 3.5rem;
+        border-top: 1px solid rgba(138, 106, 61, 0.25);
+        font-style: italic;
+        width: 200px;
+        max-width: 340px;
+    }
+
+    @media (max-width: 1023px) {
+        .video-proximamente {
+            margin-top: 2.3rem;
+        }
+    }
+
+    .merch-proximamente {
+        grid-column: 1 / -1;
+        margin: 0 auto;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--texto-oscuro);
+        text-align: center;
+        padding: 0.5rem 0 0 0;
+        margin-top: 0.75rem;
+        border-top: 1px solid rgba(138, 106, 61, 0.25);
+        font-style: italic;
+        width: 200px;
+        margin-bottom: 3rem;
+    }
+</style>
