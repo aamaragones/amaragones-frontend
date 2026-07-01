@@ -1,5 +1,6 @@
 ---
 import shapeNeg from "../../assets/logo/shape-.png";
+import shapePos from "../../assets/logo/shape+.png";
 ---
 
 <section id="about" class="about" role="region" aria-label="Sobre el autor">
@@ -28,11 +29,18 @@ import shapeNeg from "../../assets/logo/shape-.png";
             </p>
         </div>
         <div class="about-image-wrapper" aria-hidden="true">
-            <span
-                class="about-image"
+            <img
+                class="about-image about-image--dark"
+                src={shapePos.src}
+                alt=""
                 aria-hidden="true"
-                style={`-webkit-mask-image: url('${shapeNeg.src}'); mask-image: url('${shapeNeg.src}');`}
-            ></span>
+            />
+            <img
+                class="about-image about-image--light"
+                src={shapeNeg.src}
+                alt=""
+                aria-hidden="true"
+            />
         </div>
     </div>
 </section>

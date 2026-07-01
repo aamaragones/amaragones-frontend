@@ -155,7 +155,7 @@ html.light-mode .store-hero {
 }
 
 .about {
-    padding: 5rem 0;
+    padding: 6rem 0 5rem;
 }
 
 /* When using the .container inside .about we apply the layout */
@@ -207,30 +207,27 @@ html.light-mode .store-hero {
 }
 
 .about-image-wrapper {
+    display: flex;
+    justify-content: center;
     flex: 1;
 }
 
 .about-image {
-    flex: 1;
-    height: 450px;
-    width: 100%;
+    max-height: 350px;
     object-fit: contain;
     display: block;
-    /* Mask properties */
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-mode: luminance;
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-mode: luminance;
-    /* Background colors for dark and light modes */
-    background-color: white;
 }
 
-html.light-mode .about-image {
-    background-color: black;
+.about-image--light {
+    display: none;
+}
+
+html.light-mode .about-image--dark {
+    display: none;
+}
+
+html.light-mode .about-image--light {
+    display: block;
 }
 
 /* Mid resolutions: tablets and small desktops — more breathing room on sides,
@@ -334,7 +331,7 @@ html.light-mode .about-image {
 }
 
 .works {
-    padding: 2rem 5% 5rem;
+    padding: 2rem 5% 6rem;
     text-align: center
 }
 
