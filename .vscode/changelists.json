@@ -3,22 +3,9 @@
     {
       "name": "Default",
       "files": [
-        "src/assets/hero/home_hero.png",
-        "src/assets/hero/socials_hero.png",
-        "src/assets/hero/store_hero.png",
-        "src/assets/logo/shape+.png",
-        "src/assets/logo/shape-.png",
-        "src/assets/merchandising/camiseta_blanca.png",
-        "src/assets/merchandising/camiseta_negra.png",
-        "src/assets/merchandising/marcapaginas.png",
-        "src/assets/merchandising/sudadera_blanca.png",
-        "src/assets/merchandising/sudadera_negra.png",
-        "src/assets/merchandising/sudadera_negra_bolsillo.png",
-        "src/assets/merchandising/tazas_alquimia.png",
-        "src/assets/socials/social_shield.png",
         "src/styles/global.css",
         ".vscode/changelists.json",
-        "src/components/home/About.astro"
+        "src/pages/store.astro"
       ]
     }
   ],

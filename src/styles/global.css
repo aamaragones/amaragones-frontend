@@ -274,6 +274,18 @@ html.light-mode .about-image--light {
         pointer-events: none;
     }
 
+    .about-image--light {
+        display: none;
+    }
+
+    html.light-mode .about-image--dark {
+        display: none;
+    }
+
+    html.light-mode .about-image--light {
+        display: block;
+    }
+
     #about .container {
         padding-right: 3.5rem;
     }
@@ -316,7 +328,17 @@ html.light-mode .about-image--light {
         pointer-events: none;
     }
 
-    /* variants controlled globally above */
+    .about-image--light {
+        display: none;
+    }
+
+    html.light-mode .about-image--dark {
+        display: none;
+    }
+
+    html.light-mode .about-image--light {
+        display: block;
+    }
 
     .about-content {
         /* ensure text stays above the decorative image */
